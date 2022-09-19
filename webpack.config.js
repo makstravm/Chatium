@@ -1,8 +1,15 @@
 const path = require("path");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+
 const Dotenv = require("dotenv-webpack");
+
 module.exports = {
   context: path.join(__dirname, "src"),
   entry: "./index.tsx",
@@ -63,9 +70,10 @@ module.exports = {
       title: "Chatium",
     }),
     new MiniCssExtractPlugin({
-      filename: `[name].[hash].css`,
+      filename: "[name].[hash].css",
     }),
     new CssMinimizerPlugin(),
     new Dotenv(),
+    new ForkTsCheckerWebpackPlugin(),
   ],
 };
