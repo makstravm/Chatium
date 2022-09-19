@@ -1,12 +1,44 @@
 {
-  "name": "chatium-skillup",
+  "name": "chatium",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.nixdev.co/mykulenko/chat-skillup.git"
+  },
+  "private": "true",
   "author": "Maksym Mykulenko",
   "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
   "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@types/node": "^18.7.18",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "dotenv-webpack": "^7.1.0",
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "ts-loader": "^9.4.0",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.8.3",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.0"
+    "webpack-dev-server": "^4.11.1"
   }
 }
