@@ -1,0 +1,64 @@
+{
+  "name": "chatium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.nixdev.co/mykulenko/chat-skillup.git"
+  },
+  "private": "true",
+  "author": "Maksym Mykulenko",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "prettier": "prettier --write src/**/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@types/node": "^18.7.18",
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "dotenv-webpack": "^7.1.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.8",
+    "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "mini-css-extract-plugin": "^2.6.0",
+    "prettier": "2.7.1",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.0",
+    "typescript": "^4.8.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
