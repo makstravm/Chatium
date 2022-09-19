@@ -26,7 +26,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-explicit-any": 1,
-    "no-console": 1,
+    "no-console": 2,
     "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/quotes": "off",
     "quotes": "off",
