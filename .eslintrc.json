@@ -12,7 +12,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-explicit-any": 1,
-    "no-console": 1,
+    "@typescript-eslint/no-console": 1,
     "quotes": "off",
     "semi": ["error", "always"],
     "no-unused-vars": "off",
