@@ -24,6 +24,7 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+    alias: { store: path.resolve(__dirname, "src/store/") },
   },
   stats: { assets: false },
   optimization: {
