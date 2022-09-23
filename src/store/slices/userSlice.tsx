@@ -1,37 +1,65 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
+import { FirebaseError } from "firebase/app";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 
-const initialState = {
-  email: null,
-  nick: null,
-  chats: null,
-  token: null,
-  avatar: null,
-  id: null,
-};
+import { UserInfo } from "@firebase/auth-types";
+import { ISignInData } from "./types";
 
-const userSlice = createSlice({
-  name: "user",
-  initialState,
-  reducers: {
-    setUser(state, action) {
-      state.email = action.payload.email;
-      state.nick = action.payload.nick;
-      state.token = action.payload.token;
-      state.id = action.payload.id;
-      state.avatar = action.payload.avata;
-      state.chats = action.payload.chats;
-    },
-    removeUser(state) {
-      state.email = null;
-      state.token = null;
-      state.id = null;
-      state.nick = null;
-      state.avatar = null;
-      state.chats = null;
-    },
-  },
+export const userApi = createApi({
+  reducerPath: "userApi",
+  baseQuery: fakeBaseQuery(),
+  endpoints: (builder) => ({
+    signIn: builder.mutation<UserInfo | FirebaseError, ISignInData>({
+      async queryFn({ email, password }) {
+        const auth = getAuth();
+
+        try {
+          const response = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+
+          return { data: response.user };
+        } catch (err) {
+          return { data: err as FirebaseError };
+        }
+      },
+    }),
+    signUp: builder.mutation<UserInfo | FirebaseError, ISignInData>({
+      async queryFn(arg) {
+        const auth = getAuth();
+
+        try {
+          const response = await createUserWithEmailAndPassword(
+            auth,
+            arg.email,
+            arg.password
+          );
+
+          return { data: response?.user };
+        } catch (err) {
+          return { data: err as FirebaseError };
+        }
+      },
+    }),
+    logOut: builder.mutation({
+      async queryFn(arg) {
+        try {
+          const response = await signOut(arg);
+
+          return { data: response };
+        } catch (err) {
+          return { data: err };
+        }
+      },
+    }),
+  }),
 });
 
-export const { setUser, removeUser } = userSlice.actions;
-
-export const userRuesducer = userSlice.reducer;
+export const { useSignInMutation, useLogOutMutation } = userApi;
