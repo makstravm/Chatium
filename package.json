@@ -11,7 +11,10 @@
   "author": "Maksym Mykulenko",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@firebase/auth-types": "^0.11.0",
+    "@mui/material": "^5.10.6",
     "@reduxjs/toolkit": "^1.8.5",
     "firebase": "^9.10.0",
     "react": "^18.2.0",

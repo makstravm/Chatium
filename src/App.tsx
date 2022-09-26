@@ -1,5 +1,10 @@
 import React from "react";
+import Authorization from "./pages/Authorization";
 
-const App = () => <div>Hi{process.env.REACT_APP_FIREBASE_API_KEY}</div>;
+const App = () => (
+  <div>
+    <Authorization />
+  </div>
+);
 
 export default App;
