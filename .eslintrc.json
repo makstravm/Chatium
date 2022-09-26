@@ -38,6 +38,7 @@
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/space-before-function-paren": ["error", "never"],
     "import/no-duplicates": "off",
+    "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/member-delimiter-style": [
       "warn",
       {

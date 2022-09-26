@@ -10,11 +10,12 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "lib": ["es5", "es6", "es2017.object", "es2019", "dom"],
-    "typeRoots": ["node_modules/@types", "src/types"],
     "baseUrl": ".",
     "paths": {
       "store/*": ["./src/store/*"],
-      "public/*": ["./public/*"]
+      "public/*": ["./src/store/*"],
+      "components/*": ["./src/components/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }
