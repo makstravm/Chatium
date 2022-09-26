@@ -24,7 +24,10 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
-    alias: { store: path.resolve(__dirname, "src/store/") },
+    alias: {
+      store: path.resolve(__dirname, "src/store/"),
+      public: path.resolve(__dirname, "public/"),
+    },
   },
   stats: { assets: false },
   optimization: {
@@ -55,8 +58,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        test: /\.(png|jpe?g|gif|jp2|webp)$/,
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]",
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
