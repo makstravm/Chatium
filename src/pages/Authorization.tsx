@@ -1,8 +1,9 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
+
 import { Box, Container, Typography } from "@mui/material";
 
 import logo from "public/logo.png";
-import { Outlet } from "react-router-dom";
 
 const Authorization = () => (
   <Box sx={{ display: "flex", alignItems: "center", height: "100vh" }}>

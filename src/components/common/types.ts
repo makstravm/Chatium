@@ -3,11 +3,11 @@ import {
   IFormField,
   ILoginInitialValue,
   IRegistrationInitialValue,
-} from "src/constants/forms/types";
+} from "constants/forms/types";
 import {
   ILoginValidationSchema,
   IRegisterValidationSchema,
-} from "src/helpers/types";
+} from "helpers/types";
 
 export type FormikValuesType = Record<string, string>;
 

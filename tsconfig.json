@@ -15,6 +15,7 @@
       "store/*": ["./src/store/*"],
       "public/*": ["./public/*"],
       "components/*": ["./src/components/*"],
+      "helpers/*": ["./src/helpers/*"],
       "constants/*": ["./src/constants/*"]
     }
   },

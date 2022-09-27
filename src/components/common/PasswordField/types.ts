@@ -1,6 +1,8 @@
-import { FormikErrors, FormikTouched } from "formik";
 import { ChangeEvent } from "react";
-import { FormikValuesType } from "../types.";
+
+import { FormikErrors, FormikTouched } from "formik";
+
+import { FormikValuesType } from "../types";
 
 export interface IPasswordField {
   name: string;

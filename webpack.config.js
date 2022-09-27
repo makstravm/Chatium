@@ -28,6 +28,7 @@ module.exports = {
       store: path.resolve(__dirname, "src/store/"),
       components: path.resolve(__dirname, "src/components/"),
       constants: path.resolve(__dirname, "src/constants/"),
+      helpers: path.resolve(__dirname, "src/helpers/"),
       public: path.resolve(__dirname, "public/"),
     },
   },

@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+
 import {
   FormControl,
   FormHelperText,
@@ -8,6 +9,7 @@ import {
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+
 import { FieldsTypes } from "constants/fieldsTypes";
 import { IPasswordField } from "./types";
 

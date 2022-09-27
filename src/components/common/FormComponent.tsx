@@ -1,10 +1,11 @@
 import React, { FC } from "react";
-import { Box, Button, Grid, Paper, TextField } from "@mui/material";
 import { Form, Formik, FormikProps } from "formik";
+
+import { Box, Button, Grid, Paper, TextField } from "@mui/material";
 import PasswordField from "./PasswordField";
 
-import { FormikValuesType, IFormProps } from "./types.";
 import { FieldsTypes } from "constants/fieldsTypes";
+import { FormikValuesType, IFormProps } from "./types";
 
 const { TEXT } = FieldsTypes;
 
@@ -56,7 +57,7 @@ const FormComponent: FC<IFormProps> = ({
               </Grid>
             ))}
           </Grid>
-          <Box sx={{ mt: 3, mb: 2 }} textAlign="center">
+          <Box sx={{ mt: 3, pb: 2 }} textAlign="center">
             <Button
               variant="contained"
               type="submit"

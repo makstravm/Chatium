@@ -6,8 +6,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-
 import { UserInfo } from "@firebase/auth-types";
+
 import { ISignInData } from "./types";
 
 export const userApi = createApi({
