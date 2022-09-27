@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import FormComponent from "./components/common/common/FormComponent";
-import { FormikValuesType } from "./components/common/common/types.";
+import FormComponent from "./components/common/FormComponent";
+import { FormikValuesType } from "./components/common/types.";
 import {
   loginFormFields,
   loginInitialValue,
