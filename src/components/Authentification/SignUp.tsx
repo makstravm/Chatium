@@ -28,10 +28,12 @@ const SignUp = () => (
       formFields={registrationFormFields}
       buttonTitle="Sign Up"
       validationSchema={registerValidationSchema}
+      labelCheckBox="I agree to the Terms of Services"
     />
     <Box pt={3} pb={1}>
       <Typography variant="body1" component="div" align="center">
-        Already have an account ?<Link to={RoutesUrls.SIGN_IN}>Signin</Link>
+        Already have an account ?&#32;
+        <Link to={RoutesUrls.SIGN_IN}>Signin</Link>
       </Typography>
     </Box>
   </>

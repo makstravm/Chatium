@@ -1,7 +1,17 @@
 import React, { FC } from "react";
 import { Form, Formik, FormikProps } from "formik";
 
-import { Box, Button, Grid, Paper, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  FormHelperText,
+  Grid,
+  Paper,
+  TextField,
+} from "@mui/material";
 import PasswordField from "./PasswordField";
 
 import { FieldsTypes } from "constants/fieldsTypes";
@@ -15,6 +25,7 @@ const FormComponent: FC<IFormProps> = ({
   formFields,
   buttonTitle,
   onSubmit,
+  labelCheckBox,
 }) => (
   <Paper elevation={6} sx={{ borderRadius: "15px", paddingTop: "35px" }}>
     <Formik
@@ -56,6 +67,20 @@ const FormComponent: FC<IFormProps> = ({
                 )}
               </Grid>
             ))}
+            <Grid item xs={10}>
+              <FormControl error={!!(touched?.checkbox && errors?.checkbox)}>
+                <FormControlLabel
+                  control={<Checkbox name="checkbox" onChange={handleChange} />}
+                  label={labelCheckBox}
+                  componentsProps={{ typography: { fontSize: ".9em" } }}
+                />
+                {!!touched?.checkbox && (
+                  <FormHelperText id="component-error-text">
+                    {errors?.checkbox}
+                  </FormHelperText>
+                )}
+              </FormControl>
+            </Grid>
           </Grid>
           <Box sx={{ mt: 2, pb: 2 }} textAlign="center">
             <Button

@@ -35,7 +35,7 @@ const PasswordField: FC<IPasswordField> = ({
       fullWidth
       error={!!(touched[name] && errors[name])}
     >
-      <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+      <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
       <OutlinedInput
         id="outlined-adornment-password"
         name={name}

@@ -6,9 +6,9 @@ import { Box, Container, Typography } from "@mui/material";
 import logo from "public/logo.png";
 
 const Authorization = () => (
-  <Box sx={{ display: "flex", alignItems: "center", height: "100vh" }}>
+  <Box sx={{ display: "flex", alignItems: "center", minHeight: "100vh" }}>
     <Container maxWidth="xs">
-      <Box sx={{ p: 2, display: "flex", justifyContent: "center" }}>
+      <Box sx={{ p: 2, pt: 3, display: "flex", justifyContent: "center" }}>
         <img src={logo} alt="logo" width="100" />
       </Box>
       <Outlet />

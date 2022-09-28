@@ -8,12 +8,13 @@ export interface IFormField {
 export interface ILoginInitialValue {
   email: string;
   password: string;
+  checkbox: boolean;
 }
 
 export interface IRegistrationInitialValue {
   name: string;
-  lastName: string;
   email: string;
   password: string;
   confirmPassword: string;
+  checkbox: boolean;
 }

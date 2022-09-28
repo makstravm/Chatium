@@ -18,4 +18,5 @@ export const loginFormFields = [
 export const loginInitialValue = {
   email: "",
   password: "",
+  checkbox: false,
 };

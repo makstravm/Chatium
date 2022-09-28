@@ -30,10 +30,11 @@ const SignIn = () => (
       formFields={loginFormFields}
       buttonTitle="Sign In"
       validationSchema={loginValidationSchema}
+      labelCheckBox="Remember me"
     />
     <Box pt={3} pb={1}>
       <Typography variant="body1" component="div" align="center">
-        Don&apos;t have an account ?
+        Don&apos;t have an account ?&#32;
         <Link to={RoutesUrls.SIGN_UP}>Signup now</Link>
       </Typography>
     </Box>

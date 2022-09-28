@@ -9,7 +9,7 @@ import {
   IRegisterValidationSchema,
 } from "helpers/types";
 
-export type FormikValuesType = Record<string, string>;
+export type FormikValuesType = Record<string, string | boolean>;
 
 export type InitialValuesFormType =
   | IRegistrationInitialValue
@@ -25,4 +25,5 @@ export interface IFormProps {
   buttonTitle: string;
   onSubmit: (values: FormikValuesType) => void;
   validationSchema: SchemaOf<ValidationSchemaTypes>;
+  labelCheckBox: string;
 }

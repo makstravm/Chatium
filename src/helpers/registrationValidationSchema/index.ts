@@ -2,7 +2,6 @@ import * as Yup from "yup";
 
 export const registerValidationSchema = Yup.object().shape({
   name: Yup.string().required("Field required"),
-  lastName: Yup.string().required("Field required"),
   email: Yup.string()
     .email("Invalid email")
     .trim("Field cann't contain spaces")
@@ -16,5 +15,6 @@ export const registerValidationSchema = Yup.object().shape({
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password")], "Password don't match")
     .trim("Field cann't contain spaces")
-    .required(),
+    .required("Field required"),
+  checkbox: Yup.boolean().oneOf([true], "To continue you must agree"),
 });
