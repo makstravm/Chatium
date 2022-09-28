@@ -16,7 +16,7 @@ const FormComponent: FC<IFormProps> = ({
   buttonTitle,
   onSubmit,
 }) => (
-  <Paper elevation={6} sx={{ borderRadius: "15px" }}>
+  <Paper elevation={6} sx={{ borderRadius: "15px", paddingTop: "35px" }}>
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
@@ -57,7 +57,7 @@ const FormComponent: FC<IFormProps> = ({
               </Grid>
             ))}
           </Grid>
-          <Box sx={{ mt: 3, pb: 2 }} textAlign="center">
+          <Box sx={{ mt: 2, pb: 2 }} textAlign="center">
             <Button
               variant="contained"
               type="submit"

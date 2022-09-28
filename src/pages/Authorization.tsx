@@ -7,12 +7,12 @@ import logo from "public/logo.png";
 
 const Authorization = () => (
   <Box sx={{ display: "flex", alignItems: "center", height: "100vh" }}>
-    <Container maxWidth="sm">
+    <Container maxWidth="xs">
       <Box sx={{ p: 2, display: "flex", justifyContent: "center" }}>
         <img src={logo} alt="logo" width="100" />
       </Box>
       <Outlet />
-      <Typography variant="body2" align="center" pt={2}>
+      <Typography variant="body2" align="center" pt={2} pb={1}>
         © 2022 Chatium. Produced by Ukraine
       </Typography>
     </Container>

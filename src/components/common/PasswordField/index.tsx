@@ -52,7 +52,11 @@ const PasswordField: FC<IPasswordField> = ({
         }
         label={label}
       />
-      <FormHelperText id="component-error-text">{errors[name]}</FormHelperText>
+      {!!touched[name] && (
+        <FormHelperText id="component-error-text">
+          {errors[name]}
+        </FormHelperText>
+      )}
     </FormControl>
   );
 };
