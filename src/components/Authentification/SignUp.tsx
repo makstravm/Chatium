@@ -2,42 +2,39 @@ import React from "react";
 
 import FormComponent from "components/common/FormComponent";
 
-import {
-  loginFormFields,
-  loginInitialValue,
-} from "constants/forms/loginFormsFields";
-
-import { loginValidationSchema } from "helpers/loginValidationSchema";
-
 import { FormikValuesType } from "components/common/types";
 import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { RoutesUrls } from "constants/routes";
+import { registerValidationSchema } from "helpers/registrationValidationSchema";
+import {
+  registrationFormFields,
+  registrationInitialValue,
+} from "constants/forms/registrationFormsFields";
 
-const SignIn = () => (
+const SignUp = () => (
   <>
     <Box pt={1} pb={3}>
       <Typography variant="h5" component="h5" fontWeight={700} align="center">
-        Sign in
+        Sign up
       </Typography>
       <Typography variant="body1" component="div" align="center">
-        Sign in to continue to Chatium.
+        Get your Chatium account now. Sign in
       </Typography>
     </Box>
     <FormComponent
-      initialValues={loginInitialValue}
+      initialValues={registrationInitialValue}
       onSubmit={(value: FormikValuesType) => value}
-      formFields={loginFormFields}
-      buttonTitle="Sign In"
-      validationSchema={loginValidationSchema}
+      formFields={registrationFormFields}
+      buttonTitle="Sign Up"
+      validationSchema={registerValidationSchema}
     />
     <Box pt={3} pb={1}>
       <Typography variant="body1" component="div" align="center">
-        Don&apos;t have an account ?
-        <Link to={RoutesUrls.SIGN_UP}>Signup now</Link>
+        Already have an account ?<Link to={RoutesUrls.SIGN_IN}>Signin</Link>
       </Typography>
     </Box>
   </>
 );
 
-export default SignIn;
+export default SignUp;
