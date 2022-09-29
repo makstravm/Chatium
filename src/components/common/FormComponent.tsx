@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   Checkbox,
+  CircularProgress,
   FormControl,
   FormControlLabel,
   FormHelperText,
@@ -12,9 +13,10 @@ import {
   Paper,
   TextField,
 } from "@mui/material";
-import PasswordField from "./PasswordField";
 
+import PasswordField from "./PasswordField";
 import { FieldsTypes } from "constants/fieldsTypes";
+
 import { FormikValuesType, IFormProps } from "./types";
 
 const { TEXT } = FieldsTypes;
@@ -26,6 +28,7 @@ const FormComponent: FC<IFormProps> = ({
   buttonTitle,
   onSubmit,
   labelCheckBox,
+  isLoading,
 }) => (
   <Paper elevation={6} sx={{ borderRadius: "15px", paddingTop: "35px" }}>
     <Formik
@@ -84,11 +87,14 @@ const FormComponent: FC<IFormProps> = ({
           </Grid>
           <Box sx={{ mt: 2, pb: 2 }} textAlign="center">
             <Button
-              variant="contained"
+              variant="outlined"
               type="submit"
-              disabled={!isValid && !dirty}
+              sx={{ height: "38px", p: 1, width: "86px" }}
+              disabled={isLoading || (!isValid && !dirty)}
             >
-              {buttonTitle}
+              {(!isLoading && buttonTitle) || (
+                <CircularProgress color="inherit" size="1.5rem" />
+              )}
             </Button>
           </Box>
         </Form>
