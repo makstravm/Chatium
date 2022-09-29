@@ -26,4 +26,5 @@ export interface IFormProps {
   onSubmit: (values: FormikValuesType) => void;
   validationSchema: SchemaOf<ValidationSchemaTypes>;
   labelCheckBox: string;
+  isLoading: boolean;
 }

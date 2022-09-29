@@ -8,21 +8,21 @@ import {
 } from "firebase/auth";
 import { UserInfo } from "@firebase/auth-types";
 
-import { ISignInData } from "./types";
+import { FormikValuesType } from "components/common/types";
 
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fakeBaseQuery(),
   endpoints: (builder) => ({
-    signIn: builder.mutation<UserInfo | FirebaseError, ISignInData>({
+    signIn: builder.mutation<UserInfo | FirebaseError, FormikValuesType>({
       async queryFn({ email, password }) {
         const auth = getAuth();
 
         try {
           const response = await signInWithEmailAndPassword(
             auth,
-            email,
-            password
+            email as string,
+            password as string
           );
 
           return { data: response.user };
@@ -31,15 +31,15 @@ export const userApi = createApi({
         }
       },
     }),
-    signUp: builder.mutation<UserInfo | FirebaseError, ISignInData>({
-      async queryFn(arg) {
+    signUp: builder.mutation<UserInfo | FirebaseError, FormikValuesType>({
+      async queryFn({ email, password }) {
         const auth = getAuth();
 
         try {
           const response = await createUserWithEmailAndPassword(
             auth,
-            arg.email,
-            arg.password
+            email as string,
+            password as string
           );
 
           return { data: response?.user };
@@ -62,4 +62,5 @@ export const userApi = createApi({
   }),
 });
 
-export const { useSignInMutation, useLogOutMutation } = userApi;
+export const { useSignInMutation, useSignUpMutation, useLogOutMutation } =
+  userApi;

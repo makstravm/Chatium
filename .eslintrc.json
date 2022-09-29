@@ -62,6 +62,12 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
     "padding-line-between-statements": [
       "error",
       { "blankLine": "always", "prev": "*", "next": ["return"] },
