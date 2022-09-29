@@ -5,6 +5,7 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { UserInfo } from "@firebase/auth-types";
 
@@ -32,7 +33,7 @@ export const userApi = createApi({
       },
     }),
     signUp: builder.mutation<UserInfo | FirebaseError, FormikValuesType>({
-      async queryFn({ email, password }) {
+      async queryFn({ name, email, password }) {
         const auth = getAuth();
 
         try {
@@ -41,6 +42,10 @@ export const userApi = createApi({
             email as string,
             password as string
           );
+
+          await updateProfile(response.user, {
+            displayName: name as string,
+          });
 
           return { data: response?.user };
         } catch (err) {
