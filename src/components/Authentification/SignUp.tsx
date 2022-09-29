@@ -16,7 +16,7 @@ import { useSignUpMutation } from "store/slices/userSlice";
 import { registerValidationSchema } from "helpers/registrationValidationSchema";
 
 const SignUp = () => {
-  const [signUp, { isLoading }] = useSignUpMutation();
+  const [signUp, { isLoading, error, isError }] = useSignUpMutation();
 
   return (
     <>
@@ -36,6 +36,8 @@ const SignUp = () => {
         validationSchema={registerValidationSchema}
         labelCheckBox="I agree to the Terms of Services"
         isLoading={isLoading}
+        errorMessage={error}
+        isError={isError}
       />
       <Box pt={3} pb={1}>
         <Typography variant="body1" component="div" align="center">

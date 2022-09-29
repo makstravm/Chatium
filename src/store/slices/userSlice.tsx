@@ -27,7 +27,7 @@ export const userApi = createApi({
 
           return { data: response.user };
         } catch (err) {
-          return { data: err as FirebaseError };
+          return { error: err as FirebaseError };
         }
       },
     }),
@@ -44,7 +44,7 @@ export const userApi = createApi({
 
           return { data: response?.user };
         } catch (err) {
-          return { data: err as FirebaseError };
+          return { error: err as FirebaseError };
         }
       },
     }),
@@ -55,7 +55,7 @@ export const userApi = createApi({
 
           return { data: response };
         } catch (err) {
-          return { data: err };
+          return { error: err };
         }
       },
     }),

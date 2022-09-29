@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Form, Formik, FormikProps } from "formik";
 
 import {
+  Alert,
   Box,
   Button,
   Checkbox,
@@ -10,14 +11,16 @@ import {
   FormControlLabel,
   FormHelperText,
   Grid,
-  Paper,
   TextField,
 } from "@mui/material";
 
 import PasswordField from "./PasswordField";
 import { FieldsTypes } from "constants/fieldsTypes";
 
+import handlerErrorMessage from "helpers/handlerErrorMessage";
+
 import { FormikValuesType, IFormProps } from "./types";
+import { FirebaseError } from "firebase/app";
 
 const { TEXT } = FieldsTypes;
 
@@ -29,22 +32,37 @@ const FormComponent: FC<IFormProps> = ({
   onSubmit,
   labelCheckBox,
   isLoading,
+  errorMessage,
+  isError,
 }) => (
-  <Paper elevation={6} sx={{ borderRadius: "15px", paddingTop: "35px" }}>
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={(values) => onSubmit(values)}
-    >
-      {({
-        errors,
-        touched,
-        handleChange,
-        isValid,
-        dirty,
-      }: FormikProps<FormikValuesType>) => (
+  <Formik
+    initialValues={initialValues}
+    validationSchema={validationSchema}
+    onSubmit={(values) => onSubmit(values)}
+  >
+    {({
+      errors,
+      touched,
+      handleChange,
+      isValid,
+      dirty,
+    }: FormikProps<FormikValuesType>) => (
+      <Box
+        sx={{
+          pt: 4,
+          borderRadius: "15px",
+          boxShadow: `0 0 10px 0px ${!isError ? "#404040" : "#c51111"}`,
+        }}
+      >
         <Form>
           <Grid container justifyContent="center" spacing={2}>
+            {isError && (
+              <Grid item xs={10}>
+                <Alert variant="outlined" severity="error">
+                  {handlerErrorMessage(errorMessage as FirebaseError)}
+                </Alert>
+              </Grid>
+            )}
             {formFields.map(({ id, name, type, label }) => (
               <Grid key={id} item xs={10}>
                 {(type === TEXT && (
@@ -98,9 +116,9 @@ const FormComponent: FC<IFormProps> = ({
             </Button>
           </Box>
         </Form>
-      )}
-    </Formik>
-  </Paper>
+      </Box>
+    )}
+  </Formik>
 );
 
 export default FormComponent;

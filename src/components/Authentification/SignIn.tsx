@@ -16,7 +16,7 @@ import { useSignInMutation } from "store/slices/userSlice";
 import { loginValidationSchema } from "helpers/loginValidationSchema";
 
 const SignIn = () => {
-  const [signIn, { isLoading }] = useSignInMutation();
+  const [signIn, { isLoading, error, isError }] = useSignInMutation();
 
   return (
     <>
@@ -36,6 +36,8 @@ const SignIn = () => {
         validationSchema={loginValidationSchema}
         labelCheckBox="Remember me"
         isLoading={isLoading}
+        errorMessage={error}
+        isError={isError}
       />
       <Box pt={3} pb={1}>
         <Typography variant="body1" component="div" align="center">

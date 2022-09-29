@@ -27,4 +27,6 @@ export interface IFormProps {
   validationSchema: SchemaOf<ValidationSchemaTypes>;
   labelCheckBox: string;
   isLoading: boolean;
+  errorMessage?: string | unknown;
+  isError: boolean;
 }
