@@ -16,7 +16,8 @@
       "assets/*": ["./src/assets/*"],
       "components/*": ["./src/components/*"],
       "helpers/*": ["./src/helpers/*"],
-      "constants/*": ["./src/constants/*"]
+      "constants/*": ["./src/constants/*"],
+      "lib/*": ["./src/lib/*"]
     }
   },
   "exclude": ["node_modules"]

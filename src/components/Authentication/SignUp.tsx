@@ -9,8 +9,7 @@ import { registrationInitialValue } from "constants/forms/registrationInitialVal
 import { RoutesUrls } from "constants/routes";
 
 import { useSignUpMutation } from "store/slices/userSlice";
-
-import { registerValidationSchema } from "helpers/registrationValidationSchema";
+import { registerValidationSchema } from "lib/schema/registrationValidationSchema";
 
 const SignUp = () => {
   const [signUp, { isLoading, error, isError }] = useSignUpMutation();

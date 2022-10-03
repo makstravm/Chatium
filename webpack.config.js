@@ -30,6 +30,7 @@ module.exports = {
       constants: path.resolve(__dirname, "src/constants/"),
       helpers: path.resolve(__dirname, "src/helpers/"),
       assets: path.resolve(__dirname, "src/assets/"),
+      lib: path.resolve(__dirname, "src/lib/"),
     },
   },
   stats: { assets: false },

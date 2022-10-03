@@ -10,7 +10,7 @@ import { RoutesUrls } from "constants/routes";
 
 import { useSignInMutation } from "store/slices/userSlice";
 
-import { loginValidationSchema } from "helpers/loginValidationSchema";
+import { loginValidationSchema } from "lib/schema/loginValidationSchema";
 
 const SignIn = () => {
   const [signIn, { isLoading, error, isError }] = useSignInMutation();
