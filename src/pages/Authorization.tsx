@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import { Box, Container, Typography } from "@mui/material";
 
-import logo from "public/logo.png";
+import logo from "assets/logo.png";
 
 const Authorization = () => (
   <Box sx={{ display: "flex", alignItems: "center", minHeight: "100vh" }}>
