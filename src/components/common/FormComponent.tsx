@@ -58,7 +58,11 @@ const FormComponent: FC<IFormProps> = ({
           <Grid container justifyContent="center" spacing={2}>
             {isError && (
               <Grid item xs={10}>
-                <Alert variant="outlined" severity="error">
+                <Alert
+                  className="form-authentication__error-message"
+                  variant="outlined"
+                  severity="error"
+                >
                   {handlerErrorMessage(errorMessage as FirebaseError)}
                 </Alert>
               </Grid>
