@@ -5,10 +5,8 @@ import { Box, Typography } from "@mui/material";
 
 import FormComponent from "components/common/FormComponent";
 
-import {
-  registrationFormFields,
-  registrationInitialValue,
-} from "constants/forms/registrationFormsFields";
+import { registrationFormFields } from "constants/forms/registrationFormsFields";
+import { registrationInitialValue } from "constants/forms/registrationInitialValue";
 import { RoutesUrls } from "constants/routes";
 
 import { useSignUpMutation } from "store/slices/userSlice";

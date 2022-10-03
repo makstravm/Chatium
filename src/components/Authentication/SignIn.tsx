@@ -5,10 +5,8 @@ import { Box, Typography } from "@mui/material";
 
 import FormComponent from "components/common/FormComponent";
 
-import {
-  loginFormFields,
-  loginInitialValue,
-} from "constants/forms/loginFormsFields";
+import { loginInitialValue } from "constants/forms/loginInitialValue";
+import { loginFormFields } from "constants/forms/loginFormsFields";
 import { RoutesUrls } from "constants/routes";
 
 import { useSignInMutation } from "store/slices/userSlice";

@@ -27,11 +27,3 @@ export const registrationFormFields = [
     label: "Confirm password",
   },
 ];
-
-export const registrationInitialValue = {
-  name: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-  checkbox: false,
-};
