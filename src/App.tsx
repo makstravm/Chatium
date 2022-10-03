@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import SignIn from "components/Authentification/SignIn";
+import SignIn from "components/Authentication/SignIn";
 
 import { RoutesUrls } from "./constants/routes";
 
 import Authorization from "./pages/Authorization";
-import SignUp from "components/Authentification/SignUp";
+import SignUp from "components/Authentication/SignUp";
 
 const { HOME, SIGN_IN, SIGN_UP } = RoutesUrls;
 

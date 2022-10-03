@@ -7,7 +7,7 @@ export const loginValidationSchema = Yup.object().shape({
     .required("Field required"),
   password: Yup.string()
     .required("Field required")
-    .trim("Field cann't contain spaces")
+    .trim("Field can't contain spaces")
     .min(6, "Password has to be longer than 6 characters!")
     .matches(/[a-z]+/, "password must contain at least 1 lower case letter")
     .matches(/[A-Z]+/, "password must contain at least 1 upper case letter")
