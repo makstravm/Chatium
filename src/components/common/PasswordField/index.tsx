@@ -1,5 +1,4 @@
 import { FC, useState } from "react";
-
 import {
   FormControl,
   FormHelperText,
@@ -7,9 +6,7 @@ import {
   InputLabel,
   OutlinedInput,
 } from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { FieldsTypes } from "constants/fieldsTypes";
 import { IPasswordField } from "./types";
 

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Form, Formik, FormikProps } from "formik";
-
+import { FirebaseError } from "firebase/app";
 import {
   Alert,
   Box,
@@ -13,14 +13,10 @@ import {
   Grid,
   TextField,
 } from "@mui/material";
-
 import PasswordField from "./PasswordField";
 import { FieldsTypes } from "constants/fieldsTypes";
-
 import handlerErrorMessage from "helpers/handlerErrorMessage";
-
 import { FormikValuesType, IFormProps } from "./types";
-import { FirebaseError } from "firebase/app";
 
 const { TEXT } = FieldsTypes;
 
@@ -97,7 +93,11 @@ const FormComponent: FC<IFormProps> = ({
                 <FormControlLabel
                   control={<Checkbox name="checkbox" onChange={handleChange} />}
                   label={labelCheckBox}
-                  componentsProps={{ typography: { fontSize: ".9em" } }}
+                  componentsProps={{
+                    typography: {
+                      fontSize: ".9em",
+                    },
+                  }}
                 />
                 {!!touched?.checkbox && (
                   <FormHelperText id="component-error-text">
@@ -107,11 +107,19 @@ const FormComponent: FC<IFormProps> = ({
               </FormControl>
             </Grid>
           </Grid>
-          <Box sx={{ mt: 2, pb: 2 }} textAlign="center">
+          <Box
+            sx={{
+              mt: 2,
+              pb: 2,
+            }}
+            textAlign="center"
+          >
             <Button
               variant="outlined"
               type="submit"
-              sx={{ minWidth: "86px" }}
+              sx={{
+                minWidth: "86px",
+              }}
               disabled={isLoading || (!isValid && !dirty)}
             >
               {(!isLoading && buttonTitle) || (

@@ -1,7 +1,5 @@
 import { Outlet } from "react-router-dom";
-
 import { Box, Container, Typography } from "@mui/material";
-
 import logo from "assets/logo.png";
 
 const Authorization = () => (

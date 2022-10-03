@@ -1,15 +1,10 @@
 import { Link } from "react-router-dom";
-
 import { Box, Typography } from "@mui/material";
-
 import FormComponent from "components/common/FormComponent";
-
 import { loginInitialValue } from "constants/forms/loginInitialValue";
 import { loginFormFields } from "constants/forms/loginFormsFields";
 import { RoutesUrls } from "constants/routes";
-
 import { useSignInMutation } from "store/slices/userSlice";
-
 import { loginValidationSchema } from "lib/schema/loginValidationSchema";
 
 const SignIn = () => {
@@ -25,17 +20,7 @@ const SignIn = () => {
           Sign in to continue to Chatium.
         </Typography>
       </Box>
-      <FormComponent
-        initialValues={loginInitialValue}
-        onSubmit={signIn}
-        formFields={loginFormFields}
-        buttonTitle="Sign In"
-        validationSchema={loginValidationSchema}
-        labelCheckBox={<span>Remember me</span>}
-        isLoading={isLoading}
-        errorMessage={error}
-        isError={isError}
-      />
+      <FormComponent initialValues={loginInitialValue} onSubmit={signIn} formFields={loginFormFields} buttonTitle="Sign In" validationSchema={loginValidationSchema} labelCheckBox={<span>Remember me</span>} isLoading={isLoading} errorMessage={error} isError={isError} />
       <Box pt={3} pb={1}>
         <Typography variant="body1" component="div" align="center">
           Don&apos;t have an account ?&#32;

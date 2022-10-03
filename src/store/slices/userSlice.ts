@@ -1,5 +1,6 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { FirebaseError } from "firebase/app";
+import { UserInfo } from "@firebase/auth-types";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -7,8 +8,6 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { UserInfo } from "@firebase/auth-types";
-
 import { FormikValuesType } from "components/common/types";
 
 export const userApi = createApi({
