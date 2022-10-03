@@ -22,11 +22,7 @@ const PasswordField: FC<IPasswordField> = ({
   errors,
   touched,
 }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const handleClickShowPassword = () => {
-    setIsOpen(!isOpen);
-  };
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   return (
     <FormControl
@@ -39,15 +35,15 @@ const PasswordField: FC<IPasswordField> = ({
       <OutlinedInput
         id="outlined-adornment-password"
         name={name}
-        type={isOpen ? TEXT : PASSWORD}
+        type={showPassword ? TEXT : PASSWORD}
         onChange={handleChange}
         endAdornment={
           <IconButton
             aria-label="toggle password visibility"
-            onClick={handleClickShowPassword}
+            onClick={() => setShowPassword(!showPassword)}
             edge="end"
           >
-            {isOpen ? <VisibilityOff /> : <Visibility />}
+            {showPassword ? <VisibilityOff /> : <Visibility />}
           </IconButton>
         }
         label={label}
