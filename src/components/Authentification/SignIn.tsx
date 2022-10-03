@@ -34,7 +34,7 @@ const SignIn = () => {
         formFields={loginFormFields}
         buttonTitle="Sign In"
         validationSchema={loginValidationSchema}
-        labelCheckBox="Remember me"
+        labelCheckBox={<span>Remember me</span>}
         isLoading={isLoading}
         errorMessage={error}
         isError={isError}

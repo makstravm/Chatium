@@ -34,7 +34,11 @@ const SignUp = () => {
         formFields={registrationFormFields}
         buttonTitle="Sign Up"
         validationSchema={registerValidationSchema}
-        labelCheckBox="I agree to the Terms of Services"
+        labelCheckBox={
+          <span>
+            I agree to the <Link to="#"> Terms of Services</Link>
+          </span>
+        }
         isLoading={isLoading}
         errorMessage={error}
         isError={isError}
