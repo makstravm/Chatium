@@ -25,7 +25,7 @@ const SignUp = () => {
           Sign up
         </Typography>
         <Typography variant="body1" component="div" align="center">
-          Get your Chatium account now. Sign in
+          Get your Chatium account now.
         </Typography>
       </Box>
       <FormComponent
