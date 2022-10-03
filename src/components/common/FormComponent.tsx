@@ -107,7 +107,7 @@ const FormComponent: FC<IFormProps> = ({
             <Button
               variant="outlined"
               type="submit"
-              sx={{ width: "86px" }}
+              sx={{ minWidth: "86px" }}
               disabled={isLoading || (!isValid && !dirty)}
             >
               {(!isLoading && buttonTitle) || (
