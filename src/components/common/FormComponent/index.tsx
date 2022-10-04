@@ -17,6 +17,7 @@ import PasswordField from "../PasswordField";
 import { FieldsTypes } from "constants/fieldsTypes";
 import handlerErrorMessage from "helpers/handlerErrorMessage";
 import { FormikValuesType, IFormProps } from "./types";
+import style from "./FormComponent.module.scss";
 
 const { TEXT } = FieldsTypes;
 
@@ -54,12 +55,10 @@ const FormComponent: FC<IFormProps> = ({
           <Grid container justifyContent="center" spacing={2}>
             {isError && (
               <Grid item xs={10}>
-                <Alert
-                  className="form-authentication__error-message"
-                  variant="outlined"
-                  severity="error"
-                >
-                  {handlerErrorMessage(errorMessage as FirebaseError)}
+                <Alert variant="outlined" severity="error">
+                  <div className={style.errorMessage}>
+                    {handlerErrorMessage(errorMessage as FirebaseError)}
+                  </div>
                 </Alert>
               </Grid>
             )}
