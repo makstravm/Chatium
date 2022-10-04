@@ -2,8 +2,11 @@ import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { FirebaseError } from "firebase/app";
 import { UserInfo } from "@firebase/auth-types";
 import {
+  browserLocalPersistence,
+  browserSessionPersistence,
   createUserWithEmailAndPassword,
   getAuth,
+  setPersistence,
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
@@ -15,7 +18,7 @@ export const userApi = createApi({
   baseQuery: fakeBaseQuery(),
   endpoints: (builder) => ({
     signIn: builder.mutation<UserInfo | FirebaseError, FormikValuesType>({
-      async queryFn({ email, password }) {
+      async queryFn({ email, password, checkbox: rememberMe }) {
         const auth = getAuth();
 
         try {
@@ -23,6 +26,11 @@ export const userApi = createApi({
             auth,
             email as string,
             password as string
+          );
+
+          await setPersistence(
+            auth,
+            rememberMe ? browserLocalPersistence : browserSessionPersistence
           );
 
           return { data: response.user };
@@ -45,6 +53,8 @@ export const userApi = createApi({
           await updateProfile(response.user, {
             displayName: name as string,
           });
+
+          await setPersistence(auth, browserSessionPersistence);
 
           return { data: response?.user };
         } catch (err) {
