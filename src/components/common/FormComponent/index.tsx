@@ -13,7 +13,7 @@ import {
   Grid,
   TextField,
 } from "@mui/material";
-import PasswordField from "./PasswordField";
+import PasswordField from "../PasswordField";
 import { FieldsTypes } from "constants/fieldsTypes";
 import handlerErrorMessage from "helpers/handlerErrorMessage";
 import { FormikValuesType, IFormProps } from "./types";

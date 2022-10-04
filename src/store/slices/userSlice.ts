@@ -8,7 +8,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { FormikValuesType } from "components/common/types";
+import { FormikValuesType } from "components/common/FormComponent/types";
 
 export const userApi = createApi({
   reducerPath: "userApi",
