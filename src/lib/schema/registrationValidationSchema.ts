@@ -30,7 +30,7 @@ export const registerValidationSchema = Yup.object().shape({
     }),
   confirmPassword: Yup.string()
     .matches(/^\S+$/, "Field can't contain spaces")
-    .oneOf([Yup.ref("password")], "Password don't match")
+    .oneOf([Yup.ref("password")], "Password doesn't match")
     .required("Field required"),
   checkbox: Yup.boolean().oneOf([true], "To continue you must agree"),
 });
