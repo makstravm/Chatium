@@ -31,6 +31,7 @@ module.exports = {
       helpers: path.resolve(__dirname, "src/helpers/"),
       assets: path.resolve(__dirname, "src/assets/"),
       lib: path.resolve(__dirname, "src/lib/"),
+      types: path.resolve(__dirname, "src/types/"),
     },
   },
   stats: { assets: false },

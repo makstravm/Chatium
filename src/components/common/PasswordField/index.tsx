@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { FieldsTypes } from "constants/fieldsTypes";
-import { IPasswordField } from "./types";
+import { IPasswordField } from "types";
 
 const { TEXT, PASSWORD } = FieldsTypes;
 

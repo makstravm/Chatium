@@ -14,8 +14,8 @@ import {
 import PasswordField from "../PasswordField";
 import { FieldsTypes } from "constants/fieldsTypes";
 import handlerErrorMessage from "helpers/handlerErrorMessage";
-import { FormikValuesType, IFormProps } from "./types";
 import style from "./FormAuth.module.scss";
+import { FormikValuesType, IFormProps } from "types";
 
 const { TEXT } = FieldsTypes;
 

@@ -2,12 +2,10 @@ import { SchemaOf } from "yup";
 import {
   IFormField,
   ILoginInitialValue,
-  IRegistrationInitialValue,
-} from "constants/forms/types";
-import {
   ILoginValidationSchema,
   IRegisterValidationSchema,
-} from "helpers/types";
+  IRegistrationInitialValue,
+} from "types";
 
 export type FormikValuesType = Record<string, string | boolean>;
 
