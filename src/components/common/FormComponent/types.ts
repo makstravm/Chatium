@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { SchemaOf } from "yup";
 import {
   IFormField,
@@ -26,7 +25,7 @@ export interface IFormProps {
   buttonTitle: string;
   onSubmit: (values: FormikValuesType) => void;
   validationSchema: SchemaOf<ValidationSchemaTypes>;
-  labelCheckBox: ReactNode;
+  labelCheckBox?: string;
   isLoading: boolean;
   errorMessage?: string | unknown;
   isError: boolean;

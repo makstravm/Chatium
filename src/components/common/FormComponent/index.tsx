@@ -7,9 +7,7 @@ import {
   Button,
   Checkbox,
   CircularProgress,
-  FormControl,
   FormControlLabel,
-  FormHelperText,
   Grid,
   TextField,
 } from "@mui/material";
@@ -87,8 +85,8 @@ const FormComponent: FC<IFormProps> = ({
                 )}
               </Grid>
             ))}
-            <Grid item xs={10}>
-              <FormControl error={!!(touched?.checkbox && errors?.checkbox)}>
+            {labelCheckBox && (
+              <Grid item xs={10}>
                 <FormControlLabel
                   control={<Checkbox name="checkbox" onChange={handleChange} />}
                   label={labelCheckBox}
@@ -98,13 +96,8 @@ const FormComponent: FC<IFormProps> = ({
                     },
                   }}
                 />
-                {!!touched?.checkbox && (
-                  <FormHelperText id="component-error-text">
-                    {errors?.checkbox}
-                  </FormHelperText>
-                )}
-              </FormControl>
-            </Grid>
+              </Grid>
+            )}
           </Grid>
           <Box
             sx={{
