@@ -4,7 +4,7 @@
     "noImplicitAny": true,
     "module": "esnext",
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "strict": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
@@ -12,7 +12,15 @@
     "lib": ["es5", "es6", "es2017.object", "es2019", "dom"],
     "baseUrl": ".",
     "paths": {
-      "store/*": ["./src/store/*"]
+      "store/*": ["./src/store/*"],
+      "assets/*": ["./src/assets/*"],
+      "components/*": ["./src/components/*"],
+      "helpers/*": ["./src/helpers/*"],
+      "constants/*": ["./src/constants/*"],
+      "lib/*": ["./src/lib/*"],
+      "types/*": ["./src/types/*"],
+      "types": ["./src/types"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

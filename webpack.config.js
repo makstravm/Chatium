@@ -24,7 +24,15 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
-    alias: { store: path.resolve(__dirname, "src/store/") },
+    alias: {
+      store: path.resolve(__dirname, "src/store/"),
+      components: path.resolve(__dirname, "src/components/"),
+      constants: path.resolve(__dirname, "src/constants/"),
+      helpers: path.resolve(__dirname, "src/helpers/"),
+      assets: path.resolve(__dirname, "src/assets/"),
+      lib: path.resolve(__dirname, "src/lib/"),
+      types: path.resolve(__dirname, "src/types/"),
+    },
   },
   stats: { assets: false },
   optimization: {
@@ -55,8 +63,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        test: /\.(png|jpe?g|gif|jp2|webp)$/,
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]",
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,

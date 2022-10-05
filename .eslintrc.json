@@ -38,6 +38,9 @@
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/space-before-function-paren": ["error", "never"],
     "import/no-duplicates": "off",
+    "no-useless-escape": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/member-delimiter-style": [
       "warn",
       {
@@ -54,11 +57,18 @@
     "@typescript-eslint/no-non-null-assertion": 0,
     "arrow-body-style": ["error", "as-needed"],
     "linebreak-style": ["off", "windows"],
+    "multiline-ternary": ["error", "never"],
     "react/function-component-definition": [
       2,
       {
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
+      }
+    ],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
       }
     ],
     "padding-line-between-statements": [

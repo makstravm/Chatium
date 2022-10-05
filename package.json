@@ -11,13 +11,20 @@
   "author": "Maksym Mykulenko",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@firebase/auth-types": "^0.11.0",
+    "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.10.6",
     "@reduxjs/toolkit": "^1.8.5",
     "firebase": "^9.10.0",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
-    "react-router-dom": "^6.4.0"
+    "react-router-dom": "^6.4.0",
+    "uuid": "^9.0.0",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "webpack serve --mode development",
@@ -36,6 +43,7 @@
     "@types/node": "^18.7.18",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.0.0",
@@ -51,6 +59,7 @@
     "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-react": "^7.31.8",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
