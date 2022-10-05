@@ -62,7 +62,7 @@ const FormAuth: FC<IFormProps> = ({
             )}
             {formFields.map(({ id, name, type, label }) => (
               <Grid key={id} item xs={10}>
-                {(type === TEXT && (
+                {type === TEXT ? (
                   <TextField
                     name={name}
                     label={label}
@@ -73,7 +73,7 @@ const FormAuth: FC<IFormProps> = ({
                     helperText={touched[name] && errors[name]}
                     onChange={handleChange}
                   />
-                )) || (
+                ) : (
                   <PasswordField
                     name={name}
                     label={label}

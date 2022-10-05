@@ -57,6 +57,7 @@
     "@typescript-eslint/no-non-null-assertion": 0,
     "arrow-body-style": ["error", "as-needed"],
     "linebreak-style": ["off", "windows"],
+    "multiline-ternary": ["error", "never"],
     "react/function-component-definition": [
       2,
       {
