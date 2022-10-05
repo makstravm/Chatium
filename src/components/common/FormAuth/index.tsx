@@ -114,7 +114,9 @@ const FormAuth: FC<IFormProps> = ({
               }}
               disabled={isLoading || (!isValid && !dirty)}
             >
-              {(!isLoading && buttonTitle) || (
+              {!isLoading ? (
+                buttonTitle
+              ) : (
                 <CircularProgress color="inherit" size="1.5rem" />
               )}
             </Button>
