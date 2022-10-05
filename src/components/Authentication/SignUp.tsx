@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
-import FormComponent from "components/common/FormComponent";
+import FormAuth from "components/common/FormAuth";
 import { registrationFormFields } from "constants/forms/registrationFormsFields";
 import { registrationInitialValue } from "constants/forms/registrationInitialValue";
 import { RoutesUrls } from "constants/routes";
@@ -20,7 +20,7 @@ const SignUp = () => {
           Get your Chatium account now.
         </Typography>
       </Box>
-      <FormComponent
+      <FormAuth
         initialValues={registrationInitialValue}
         onSubmit={signUp}
         formFields={registrationFormFields}

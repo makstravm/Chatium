@@ -15,11 +15,11 @@ import PasswordField from "../PasswordField";
 import { FieldsTypes } from "constants/fieldsTypes";
 import handlerErrorMessage from "helpers/handlerErrorMessage";
 import { FormikValuesType, IFormProps } from "./types";
-import style from "./FormComponent.module.scss";
+import style from "./FormAuth.module.scss";
 
 const { TEXT } = FieldsTypes;
 
-const FormComponent: FC<IFormProps> = ({
+const FormAuth: FC<IFormProps> = ({
   initialValues,
   validationSchema,
   formFields,
@@ -125,4 +125,4 @@ const FormComponent: FC<IFormProps> = ({
   </Formik>
 );
 
-export default FormComponent;
+export default FormAuth;
