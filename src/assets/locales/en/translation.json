@@ -1,1 +1,26 @@
-{}
+{
+  "auth": {
+    "signIn": {
+      "title": "Sign in",
+      "subtitle": "Sign in to continue to Chatium.",
+      "buttonTitle": "Sign In",
+      "checkBoxRemember": "Remember me",
+      "footerText": "Don't have an account?",
+      "footerLink": "Sign up now"
+    },
+    "signUp": {
+      "title": "Sign Up",
+      "subtitle": "Get your Chatium account now.",
+      "buttonTitle": "Sign Up",
+      "footerText": "Already have an account?",
+      "footerLink": "Sign in"
+    },
+    "formLabels": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "footerText": "Produced in Ukraine"
+  }
+}

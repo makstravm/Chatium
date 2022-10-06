@@ -1,1 +1,26 @@
-{}
+{
+  "auth": {
+    "signIn": {
+      "title": "Увійти",
+      "subtitle": "Увійдіть, щоб перейти до Chatium.",
+      "buttonTitle": "Увійти",
+      "checkBoxRemember": "Запам'ятати мене",
+      "footerText": "Не маєте облікового запису?",
+      "footerLink": "Зареєструватися зараз"
+    },
+    "signUp": {
+      "title": "Зареєструватися",
+      "subtitle": "Отримайте свій обліковий запис Chatium зараз.",
+      "buttonTitle": "Зареєструватися",
+      "footerText": "Вже маєте обліковий запис?",
+      "footerLink": "Увійти"
+    },
+    "formLabels": {
+      "name": "Ім'я",
+      "email": "Електронна пошта",
+      "password": "Пароль",
+      "confirmPassword": "Підтвердити пароль"
+    },
+    "footerText": "Виробляється в Україні"
+  }
+}
