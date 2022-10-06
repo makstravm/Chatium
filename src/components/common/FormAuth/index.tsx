@@ -74,7 +74,10 @@ const FormAuth: FC<IFormProps> = ({
                       size="small"
                       fullWidth
                       error={!!(touched[name] && errors[name])}
-                      helperText={touched[name] && errors[name]}
+                      helperText={
+                        !!(touched[name] && errors[name]) &&
+                        t(`auth.validError.${errors[name] as string}`)
+                      }
                       onChange={handleChange}
                     />
                   ) : (

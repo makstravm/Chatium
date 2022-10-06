@@ -21,6 +21,18 @@
       "password": "Password",
       "confirmPassword": "Confirm Password"
     },
-    "footerText": "Produced in Ukraine"
+    "footerText": "Produced in Ukraine",
+    "validError": {
+      "required": "Field required",
+      "space": "Field can't contain spaces",
+      "email": "Invalid email",
+      "longPassword": "Password has to be shorter than 6 characters!",
+      "shortPassword": "Password has to be longer than 6 characters!",
+      "lowerCase": "Password must contain at least 1 lower case letter",
+      "upperCase": "Password must contain at least 1 upper case letter",
+      "number": "Password must contain at least 1 number",
+      "symbols": "Passwod must not contain special characters",
+      "passwordDoesNotMatch": "Password doesn't match"
+    }
   }
 }
