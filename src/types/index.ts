@@ -17,3 +17,5 @@ export {
 } from "types/helpers";
 
 export { IPasswordField } from "types/passwordField";
+
+export { IErrorMessage } from "types/errorMessage";

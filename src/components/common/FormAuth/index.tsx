@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { Form, Formik, FormikProps } from "formik";
 import { FirebaseError } from "firebase/app";
 import {
-  Alert,
   Box,
   Button,
   Checkbox,
@@ -13,9 +12,8 @@ import {
   TextField,
 } from "@mui/material";
 import PasswordField from "../PasswordField";
+import ErrorMessage from "../ErrorMessage";
 import { FieldsTypes } from "constants/fieldsTypes";
-import handlerErrorMessage from "helpers/handlerErrorMessage";
-import style from "./FormAuth.module.scss";
 import { FormikValuesType, IFormProps } from "types";
 
 const { TEXT } = FieldsTypes;
@@ -57,11 +55,7 @@ const FormAuth: FC<IFormProps> = ({
             <Grid container justifyContent="center" spacing={2}>
               {isError && (
                 <Grid item xs={10}>
-                  <Alert variant="outlined" severity="error">
-                    <div className={style.errorMessage}>
-                      {handlerErrorMessage(errorMessage as FirebaseError)}
-                    </div>
-                  </Alert>
+                  <ErrorMessage errorMessage={errorMessage as FirebaseError} />
                 </Grid>
               )}
               {formFields.map(({ id, name, type }) => (
