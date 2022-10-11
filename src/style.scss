@@ -1,1 +1,8 @@
-
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  &:hover {
+    text-shadow: 0 0 10px #8d8d8d;
+  }
+}
