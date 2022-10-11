@@ -1,15 +1,18 @@
+import { Theme } from "constants/themeMode";
 import { createContext, FC, ReactNode, useEffect, useState } from "react";
 import { IThemeContext } from "types";
 
+const { DARK, LIGHT } = Theme;
+
 export const ThemeContext = createContext<IThemeContext>({
-  themeMode: "light",
+  themeMode: LIGHT,
   changeTheme: () => {},
 });
 
 const ThemeContextWrapper: FC<{ children: ReactNode }> = ({ children }) => {
-  const [themeMode, setTheme] = useState("light");
+  const [themeMode, setTheme] = useState(LIGHT);
 
-  const changeTheme = (theme: string) => {
+  const changeTheme = (theme: typeof LIGHT | typeof DARK) => {
     localStorage.theme = theme;
     setTheme(theme);
   };

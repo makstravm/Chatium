@@ -1,5 +1,5 @@
 import { ThemeOptions } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import { grey, red } from "@mui/material/colors";
 
 export const darkTheme: ThemeOptions = {
   typography: {
@@ -14,6 +14,9 @@ export const darkTheme: ThemeOptions = {
     },
     secondary: {
       main: grey[100],
+    },
+    error: {
+      main: red[300],
     },
     text: {
       primary: grey[100],

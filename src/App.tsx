@@ -5,9 +5,10 @@ import SignIn from "components/Authentication/SignIn";
 import SignUp from "components/Authentication/SignUp";
 import { ThemeContext } from "contexts/ThemeContext";
 import { RoutesUrls } from "constants/routes";
+import { Theme } from "constants/themeMode";
 import Authorization from "pages/Authorization";
-import { lightTheme } from "./themes/lightTheme";
-import { darkTheme } from "./themes/darkTheme";
+import { lightTheme } from "themes/lightTheme";
+import { darkTheme } from "themes/darkTheme";
 
 const { SIGN_IN, SIGN_UP } = RoutesUrls;
 
@@ -15,7 +16,7 @@ const App = () => {
   const { themeMode } = useContext(ThemeContext);
 
   const theme = useMemo(
-    () => createTheme(themeMode === "dark" ? darkTheme : lightTheme),
+    () => createTheme(themeMode === Theme.DARK ? darkTheme : lightTheme),
     [themeMode]
   );
 

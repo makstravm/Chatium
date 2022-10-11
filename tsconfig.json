@@ -18,6 +18,7 @@
       "contexts/*": ["./src/contexts/*"],
       "helpers/*": ["./src/helpers/*"],
       "pages/*": ["./src/pages/*"],
+      "themes/*": ["./src/themes/*"],
       "constants/*": ["./src/constants/*"],
       "lib/*": ["./src/lib/*"],
       "types/*": ["./src/types/*"],
