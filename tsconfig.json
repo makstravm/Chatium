@@ -15,6 +15,7 @@
       "store/*": ["./src/store/*"],
       "assets/*": ["./src/assets/*"],
       "components/*": ["./src/components/*"],
+      "contexts/*": ["./src/contexts/*"],
       "helpers/*": ["./src/helpers/*"],
       "constants/*": ["./src/constants/*"],
       "lib/*": ["./src/lib/*"],
