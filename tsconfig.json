@@ -9,6 +9,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "lib": ["es5", "es6", "es2017.object", "es2019", "dom"],
     "baseUrl": ".",
     "paths": {

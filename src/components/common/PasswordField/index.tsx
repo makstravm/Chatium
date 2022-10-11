@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   FormControl,
   FormHelperText,
@@ -20,6 +21,8 @@ const PasswordField: FC<IPasswordField> = ({
   touched,
 }) => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
+
+  const { t } = useTranslation();
 
   return (
     <FormControl
@@ -45,9 +48,9 @@ const PasswordField: FC<IPasswordField> = ({
         }
         label={label}
       />
-      {!!touched[name] && (
+      {!!(touched[name] && errors[name]) && (
         <FormHelperText id="component-error-text">
-          {errors[name]}
+          {t(`auth.validError.${errors[name] as string}`)}
         </FormHelperText>
       )}
     </FormControl>
