@@ -108,6 +108,7 @@ const FormAuth: FC<IFormProps> = ({
           >
             <Button
               variant="outlined"
+              color="secondary"
               type="submit"
               sx={{
                 minWidth: "86px",

@@ -1,4 +1,4 @@
 export interface IThemeContext {
-  theme: string;
+  themeMode: string;
   changeTheme: (theme: string) => void;
 }

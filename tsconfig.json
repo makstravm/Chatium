@@ -17,6 +17,7 @@
       "components/*": ["./src/components/*"],
       "contexts/*": ["./src/contexts/*"],
       "helpers/*": ["./src/helpers/*"],
+      "pages/*": ["./src/pages/*"],
       "constants/*": ["./src/constants/*"],
       "lib/*": ["./src/lib/*"],
       "types/*": ["./src/types/*"],
