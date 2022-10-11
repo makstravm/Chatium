@@ -3,7 +3,7 @@ import { grey, red } from "@mui/material/colors";
 
 export const darkTheme: ThemeOptions = {
   typography: {
-    fontFamily: ["-apple-system", "Public Sans", "sans-serif"].join(","),
+    fontFamily: ["-apple-system", "Comfortaa", "cursive"].join(","),
     allVariants: { color: grey[100] },
   },
   palette: {

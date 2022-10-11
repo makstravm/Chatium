@@ -3,7 +3,7 @@ import { grey } from "@mui/material/colors";
 
 export const lightTheme: ThemeOptions = {
   typography: {
-    fontFamily: ["-apple-system", "Public Sans", "sans-serif"].join(","),
+    fontFamily: ["-apple-system", "Comfortaa", "cursive"].join(","),
     allVariants: { color: grey[900] },
   },
   palette: {
