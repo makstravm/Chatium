@@ -8,12 +8,13 @@ import "./firebase";
 import "./i18n";
 import "./style.scss";
 
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Suspense fallback="...is loading">
       <Provider store={store}>
         <ThemeContextWrapper>
           <App />
-        <ThemeContextWrapper>
+        </ThemeContextWrapper>
       </Provider>
     </Suspense>
   </StrictMode>

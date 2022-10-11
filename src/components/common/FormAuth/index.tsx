@@ -99,34 +99,10 @@ const FormAuth: FC<IFormProps> = ({
                       },
                     }}
                   />
-                )}
-              </Grid>
-            ))}
-            {labelCheckBox && (
-              <Grid item xs={10}>
-                <FormControlLabel
-                  control={<Checkbox name="checkbox" onChange={handleChange} />}
-                  label={labelCheckBox}
-                  componentsProps={{
-                    typography: {
-                      fontSize: ".9em",
-                    },
-                  }}
-                />
-              </Grid>
-            )}
-          </Grid>
-          <Box
-            sx={{
-              mt: 2,
-              pb: 2,
-            }}
-            textAlign="center"
-          >
-            <Button
-              variant="outlined"
-              color="secondary"
-              type="submit"
+                </Grid>
+              )}
+            </Grid>
+            <Box
               sx={{
                 mt: 2,
                 pb: 2,
@@ -136,6 +112,7 @@ const FormAuth: FC<IFormProps> = ({
               <Button
                 variant="outlined"
                 type="submit"
+                color="secondary"
                 sx={{
                   minWidth: "86px",
                 }}
