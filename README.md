@@ -4,6 +4,9 @@
 
 ### Running :rocket:
 
+node v14.17.4
+npm v6.14.14
+
 - Clone [this](https://gitlab.nixdev.co/mykulenko/chat-skillup.git) repository
 - Run `npm install` to install all the dependencies.
 - Create `.env` file in the project root

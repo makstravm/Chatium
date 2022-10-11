@@ -19,3 +19,5 @@ export {
 export { IThemeContext } from "types/context";
 
 export { IPasswordField } from "types/passwordField";
+
+export { IErrorMessage } from "types/errorMessage";
