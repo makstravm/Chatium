@@ -1,6 +1,6 @@
+import { createContext, FC, ReactNode, useEffect, useState } from "react";
 import { Theme } from "constants/themeMode";
 import { themeHandlerByTime } from "helpers/themeHandlerByTime";
-import { createContext, FC, ReactNode, useEffect, useState } from "react";
 import { IThemeContext } from "types";
 
 const { DARK, LIGHT } = Theme;

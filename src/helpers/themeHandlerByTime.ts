@@ -1,4 +1,5 @@
 import { Theme } from "constants/themeMode";
+
 const { DARK, LIGHT } = Theme;
 
 export const themeHandlerByTime = () => {

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "contexts/ThemeContext";
 import { Box } from "@mui/material";
 import logoLight from "assets/logoLight.png";
