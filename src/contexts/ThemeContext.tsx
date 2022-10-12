@@ -1,4 +1,5 @@
 import { Theme } from "constants/themeMode";
+import { themeHandlerByTime } from "helpers/themeHandlerByTime";
 import { createContext, FC, ReactNode, useEffect, useState } from "react";
 import { IThemeContext } from "types";
 
@@ -20,6 +21,10 @@ const ThemeContextWrapper: FC<{ children: ReactNode }> = ({ children }) => {
   useEffect(() => {
     if (localStorage?.theme) {
       setTheme(localStorage.theme);
+    } else {
+      const themeMode = themeHandlerByTime();
+
+      setTheme(themeMode);
     }
   }, []);
 
