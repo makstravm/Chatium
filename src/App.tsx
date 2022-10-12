@@ -29,7 +29,7 @@ const App = () => {
             <Route path={SIGN_IN} element={<SignIn />} />
             <Route path={SIGN_UP} element={<SignUp />} />
           </Route>
-          <Route path="*" element={<Navigate to={SIGN_IN} replace />} />{" "}
+          <Route path="*" element={<Navigate to={SIGN_IN} replace />} />
           {/* this navigate is mocked */}
         </Routes>
       </BrowserRouter>
