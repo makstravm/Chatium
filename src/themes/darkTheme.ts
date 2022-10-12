@@ -1,27 +1,31 @@
 import { ThemeOptions } from "@mui/material";
-import { grey, red } from "@mui/material/colors";
+import { colors } from "./colors";
+
+const {
+  fontsDark,
+  backgroundDark,
+  primaryMainDark,
+  secondaryMainDark,
+  autoFillBgcTextFieldDark,
+  errorDark,
+} = colors;
 
 export const darkTheme: ThemeOptions = {
   typography: {
     fontFamily: ["-apple-system", "Comfortaa", "cursive"].join(","),
-    allVariants: { color: grey[100] },
+    allVariants: { color: fontsDark },
   },
   palette: {
     mode: "dark",
-    background: { default: grey[900] },
+    background: { default: backgroundDark },
     primary: {
-      main: grey.A400,
+      main: primaryMainDark,
     },
     secondary: {
-      main: grey[100],
+      main: secondaryMainDark,
     },
     error: {
-      main: red[300],
-    },
-    text: {
-      primary: grey[100],
-      secondary: grey[400],
-      disabled: grey[700],
+      main: errorDark,
     },
   },
   components: {
@@ -30,7 +34,7 @@ export const darkTheme: ThemeOptions = {
         root: {
           input: {
             "&:-webkit-autofill": {
-              WebkitBoxShadow: `0 0 0 1000px ${grey[700]} inset`,
+              WebkitBoxShadow: `0 0 0 1000px ${autoFillBgcTextFieldDark} inset`,
             },
           },
         },

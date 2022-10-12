@@ -1,19 +1,31 @@
 import { ThemeOptions } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import { colors } from "./colors";
+
+const {
+  fontsLight,
+  backgroundLight,
+  primaryMainLight,
+  secondaryMainLight,
+  autoFillBgcTextFieldLight,
+  errorLight,
+} = colors;
 
 export const lightTheme: ThemeOptions = {
   typography: {
     fontFamily: ["-apple-system", "Comfortaa", "cursive"].join(","),
-    allVariants: { color: grey[900] },
+    allVariants: { color: fontsLight },
   },
   palette: {
     mode: "light",
-    background: { default: grey[200] },
+    background: { default: backgroundLight },
     primary: {
-      main: grey[500],
+      main: primaryMainLight,
     },
     secondary: {
-      main: grey[900],
+      main: secondaryMainLight,
+    },
+    error: {
+      main: errorLight,
     },
   },
   components: {
@@ -22,7 +34,7 @@ export const lightTheme: ThemeOptions = {
         root: {
           input: {
             "&:-webkit-autofill": {
-              WebkitBoxShadow: `0 0 0 1000px ${grey[300]} inset`,
+              WebkitBoxShadow: `0 0 0 1000px ${autoFillBgcTextFieldLight} inset`,
             },
           },
         },
