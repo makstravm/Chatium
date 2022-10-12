@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { ThemeContext } from "contexts/ThemeContext";
 import { Box } from "@mui/material";
+import { ThemeContext } from "contexts/ThemeContext";
+import { Theme } from "constants/themeMode";
 import logoLight from "assets/logoLight.png";
 import logoDark from "assets/logoDark.png";
-import { Theme } from "constants/themeMode";
 
 const Logo = () => {
   const { themeMode } = useContext(ThemeContext);
