@@ -9,6 +9,7 @@ export {
   ValidationSchemaTypes,
   IFormProps,
   FormikValuesType,
+  FormikSubmitType,
 } from "types/formAuth";
 
 export {

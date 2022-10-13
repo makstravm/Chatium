@@ -1,5 +1,5 @@
 import { useContext, useMemo } from "react";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import SignIn from "components/Authentication/SignIn";
 import SignUp from "components/Authentication/SignUp";
@@ -29,8 +29,6 @@ const App = () => {
             <Route path={SIGN_IN} element={<SignIn />} />
             <Route path={SIGN_UP} element={<SignUp />} />
           </Route>
-          <Route path="*" element={<Navigate to={SIGN_IN} replace />} />
-          {/* this navigate is mocked */}
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

@@ -15,6 +15,7 @@ import PasswordField from "../PasswordField";
 import ErrorMessage from "../ErrorMessage";
 import { FieldsTypes } from "constants/fieldsTypes";
 import { FormikValuesType, IFormProps } from "types";
+import { useNavigate } from "react-router-dom";
 
 const { TEXT } = FieldsTypes;
 
@@ -31,11 +32,13 @@ const FormAuth: FC<IFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
+  const navigate = useNavigate();
+
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(values) => onSubmit(values)}
+      onSubmit={(values) => onSubmit({ values, navigate })}
     >
       {({
         errors,
