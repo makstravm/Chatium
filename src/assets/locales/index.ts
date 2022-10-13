@@ -1,4 +1,4 @@
-import translationUA from "assets/locales/ua/translation.json";
+import translationUK from "assets/locales/uk/translation.json";
 import translationEN from "assets/locales/en/translation.json";
 
-export { translationUA, translationEN };
+export { translationUK, translationEN };

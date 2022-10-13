@@ -1,1 +1,11 @@
-
+a {
+  text-decoration: none;
+  font-style: italic;
+  color: inherit;
+  transition: all 0.3s;
+  font-weight: 700;
+  &:hover {
+    text-shadow: 0 4px 10px #8d8d8d, 0px -4px 10px #8d8d8d, 4px 0px 10px #8d8d8d,
+      -4px 0px 10px #8d8d8d;
+  }
+}
