@@ -9,6 +9,7 @@ import { Theme } from "constants/themeMode";
 import Authorization from "pages/Authorization";
 import { lightTheme } from "themes/lightTheme";
 import { darkTheme } from "themes/darkTheme";
+import AuthContextWrapper from "./contexts/AuthContex";
 
 const { SIGN_IN, SIGN_UP } = RoutesUrls;
 
@@ -22,15 +23,17 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Authorization />}>
-            <Route path={SIGN_IN} element={<SignIn />} />
-            <Route path={SIGN_UP} element={<SignUp />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <AuthContextWrapper>
+        <CssBaseline />
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Authorization />}>
+              <Route path={SIGN_IN} element={<SignIn />} />
+              <Route path={SIGN_UP} element={<SignUp />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthContextWrapper>
     </ThemeProvider>
   );
 };
