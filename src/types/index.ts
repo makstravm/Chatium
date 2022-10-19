@@ -17,7 +17,7 @@ export {
   IRegisterValidationSchema,
 } from "types/helpers";
 
-export { IThemeContext } from "types/context";
+export { IThemeContext, IAuthContext } from "types/context";
 
 export { IPasswordField } from "types/passwordField";
 
