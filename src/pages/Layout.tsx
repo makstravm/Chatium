@@ -1,12 +1,11 @@
-import { Container, Grid, Paper, Typography } from "@mui/material";
-import Footer from "src/components/Footer";
+import { Container, Grid, Paper } from "@mui/material";
+import Footer from "components/Footer";
+import LogoSmall from "components/LogoSmall";
 
 const Layout = () => (
   <Container maxWidth="xl">
     <Grid container wrap="nowrap" height="100vh" flexDirection="column">
-      <Typography variant="h5" className="header-message">
-        Logo
-      </Typography>
+      <LogoSmall />
       <Grid container component={Paper} flexGrow="1">
         <Grid item xs={3}>
           Aside
@@ -15,7 +14,7 @@ const Layout = () => (
           Chat
         </Grid>
       </Grid>
-      <Grid container>
+      <Grid item>
         <Footer />
       </Grid>
     </Grid>

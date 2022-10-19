@@ -46,7 +46,7 @@ export const darkTheme: ThemeOptions = {
       styleOverrides: {
         root: {
           backgroundColor: backgroundPaperDark,
-          borderRadius: "15px",
+          borderRadius: "10px",
         },
         elevation3: {
           boxShadow: `0 0 10px 0px ${boxShadowPaperDark}`,
