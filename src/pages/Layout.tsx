@@ -1,4 +1,5 @@
 import { Container, Grid, Paper, Typography } from "@mui/material";
+import Footer from "src/components/Footer";
 
 const Layout = () => (
   <Container maxWidth="xl">
@@ -15,7 +16,7 @@ const Layout = () => (
         </Grid>
       </Grid>
       <Grid container>
-        <div>Footer</div>
+        <Footer />
       </Grid>
     </Grid>
   </Container>

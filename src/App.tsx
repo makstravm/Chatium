@@ -8,10 +8,10 @@ import { ThemeContext } from "contexts/ThemeContext";
 import AuthContextWrapper from "contexts/AuthContex";
 import { RoutesUrls } from "constants/routes";
 import { Theme } from "constants/themeMode";
+import Layout from "pages/Layout";
 import Authorization from "pages/Authorization";
 import { lightTheme } from "themes/lightTheme";
 import { darkTheme } from "themes/darkTheme";
-import Layout from "pages/Layout";
 
 const { SIGN_IN, SIGN_UP } = RoutesUrls;
 
