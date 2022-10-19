@@ -3,7 +3,7 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { AuthContext } from "contexts/AuthContex";
 import { RoutesUrls } from "constants/routes";
 
-export const ProtectedRoute = () => {
+const ProtectedRoute = () => {
   const { user, loading } = useContext(AuthContext);
 
   const location = useLocation();
@@ -18,3 +18,5 @@ export const ProtectedRoute = () => {
 
   return <Outlet />;
 };
+
+export default ProtectedRoute;

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import SignIn from "components/Authentication/SignIn";
 import SignUp from "components/Authentication/SignUp";
-import { ProtectedRoute } from "components/ProtectedRoute";
+import ProtectedRoute from "components/ProtectedRoute";
 import { ThemeContext } from "contexts/ThemeContext";
 import AuthContextWrapper from "contexts/AuthContex";
 import { RoutesUrls } from "constants/routes";
