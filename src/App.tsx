@@ -11,6 +11,7 @@ import { Theme } from "constants/themeMode";
 import Authorization from "pages/Authorization";
 import { lightTheme } from "themes/lightTheme";
 import { darkTheme } from "themes/darkTheme";
+import Layout from "pages/Layout";
 
 const { SIGN_IN, SIGN_UP } = RoutesUrls;
 
@@ -33,7 +34,7 @@ const App = () => {
               <Route path={SIGN_UP} element={<SignUp />} />
             </Route>
             <Route element={<ProtectedRoute />}>
-              <Route path={"/"} element={<div>HI!!!</div>} />
+              <Route path={"/"} element={<Layout />} />
             </Route>
           </Routes>
         </BrowserRouter>
