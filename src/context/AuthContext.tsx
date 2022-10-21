@@ -18,11 +18,7 @@ export const AuthProviderWrapper: FC<{ children: ReactNode }> = ({
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUserData({ auth: user, isLoading: false });
-      } else {
-        setUserData({ auth: user, isLoading: false });
-      }
+      setUserData({ auth: user, isLoading: false });
     });
   }, []);
 
