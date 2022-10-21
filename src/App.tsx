@@ -35,6 +35,7 @@ const App = () => {
             </Route>
             <Route path={HOME} element={<ProtectedRoute />}>
               <Route path={HOME} element={<Navigate to={"layout"} />} />
+              {/* this route name is mockthis route  */}
               <Route path={"layout"} element={<Layout />} />
             </Route>
           </Routes>
