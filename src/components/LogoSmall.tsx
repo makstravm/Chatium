@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { Box } from "@mui/material";
 import { ThemeContext } from "contexts/ThemeContext";
 import { Theme } from "constants/themeMode";
-import logoLight from "assets/logoChatiumLight.png";
-import logoDark from "assets/logoChatiumDark.png";
+import logoLight from "assets/logoSmallLight.png";
+import logoDark from "assets/logoSmallDark.png";
 
-const LogoSmall = () => {
+export const LogoSmall = () => {
   const { themeMode } = useContext(ThemeContext);
 
   return (
@@ -18,5 +18,3 @@ const LogoSmall = () => {
     </Box>
   );
 };
-
-export default LogoSmall;

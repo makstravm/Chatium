@@ -1,6 +1,6 @@
 import { Container, Grid, Paper } from "@mui/material";
 import Footer from "components/Footer";
-import LogoSmall from "components/LogoSmall";
+import { LogoSmall } from "components/LogoSmall";
 
 const Layout = () => (
   <Container maxWidth="xl">
