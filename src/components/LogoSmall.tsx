@@ -12,7 +12,7 @@ export const LogoSmall = () => {
     <Box sx={{ pb: 1, pt: 1, display: "flex" }}>
       <img
         src={themeMode === Theme.DARK ? logoDark : logoLight}
-        alt="logo"
+        alt="Logo for Chatium, instant messaging system"
         width="100"
       />
     </Box>
