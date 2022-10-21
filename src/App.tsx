@@ -1,5 +1,5 @@
 import { useContext, useMemo } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import SignIn from "components/Authentication/SignIn";
 import SignUp from "components/Authentication/SignUp";
@@ -13,7 +13,7 @@ import Authorization from "pages/Authorization";
 import { lightTheme } from "themes/lightTheme";
 import { darkTheme } from "themes/darkTheme";
 
-const { SIGN_IN, SIGN_UP } = RoutesUrls;
+const { HOME, SIGN_IN, SIGN_UP } = RoutesUrls;
 
 const App = () => {
   const { themeMode } = useContext(ThemeContext);
@@ -33,8 +33,9 @@ const App = () => {
               <Route path={SIGN_IN} element={<SignIn />} />
               <Route path={SIGN_UP} element={<SignUp />} />
             </Route>
-            <Route element={<ProtectedRoute />}>
-              <Route path={"/"} element={<Layout />} />
+            <Route path={HOME} element={<ProtectedRoute />}>
+              <Route path={HOME} element={<Navigate to={"layout"} />} />
+              <Route path={"layout"} element={<Layout />} />
             </Route>
           </Routes>
         </BrowserRouter>

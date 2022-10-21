@@ -62,7 +62,7 @@ export const userApi = createApi({
           });
 
           await setPersistence(auth, browserSessionPersistence);
-          navigate(HOME);
+          navigate(HOME, { replace: true });
 
           return { data: response?.user };
         } catch (err) {

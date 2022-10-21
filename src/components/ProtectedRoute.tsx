@@ -13,7 +13,7 @@ const ProtectedRoute = () => {
   }
 
   if (!user) {
-    return <Navigate to={RoutesUrls.SIGN_IN} state={location} />;
+    return <Navigate to={RoutesUrls.SIGN_IN} state={location} replace />;
   }
 
   return <Outlet />;
