@@ -9,6 +9,6 @@ export interface IThemeContext {
 }
 
 export interface IAuthContext {
-  user: UserInfo | null;
-  loading: boolean;
+  auth: UserInfo | null;
+  isLoading: boolean;
 }

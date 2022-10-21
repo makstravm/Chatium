@@ -4,15 +4,15 @@ import { AuthContext } from "context/AuthContext";
 import { RoutesUrls } from "constants/routes";
 
 const ProtectedRoute = () => {
-  const { user, loading } = useContext(AuthContext);
+  const { auth, isLoading } = useContext(AuthContext);
 
   const location = useLocation();
 
-  if (loading) {
+  if (isLoading) {
     return <div>LOADING ................</div>;
   }
 
-  if (!user) {
+  if (auth) {
     return <Navigate to={RoutesUrls.SIGN_IN} state={location} replace />;
   }
 

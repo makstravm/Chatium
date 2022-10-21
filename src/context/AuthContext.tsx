@@ -4,24 +4,24 @@ import { auth } from "src/firebase";
 import { IAuthContext } from "types";
 
 export const AuthContext = createContext<IAuthContext>({
-  user: null,
-  loading: true,
+  auth: null,
+  isLoading: true,
 });
 
 export const AuthProviderWrapper: FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [userData, setUserData] = useState<IAuthContext>({
-    user: null,
-    loading: true,
+    auth: null,
+    isLoading: true,
   });
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserData({ user, loading: false });
+        setUserData({ auth: user, isLoading: false });
       } else {
-        setUserData({ user, loading: false });
+        setUserData({ auth: user, isLoading: false });
       }
     });
   }, []);
