@@ -32,7 +32,7 @@ module.exports = {
       constants: path.resolve(__dirname, "src/constants/"),
       pages: path.resolve(__dirname, "src/pages/"),
       helpers: path.resolve(__dirname, "src/helpers/"),
-      contexts: path.resolve(__dirname, "src/contexts/"),
+      context: path.resolve(__dirname, "src/context/"),
       themes: path.resolve(__dirname, "src/themes/"),
       assets: path.resolve(__dirname, "src/assets/"),
       lib: path.resolve(__dirname, "src/lib/"),

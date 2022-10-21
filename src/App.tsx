@@ -4,8 +4,8 @@ import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import SignIn from "components/Authentication/SignIn";
 import SignUp from "components/Authentication/SignUp";
 import ProtectedRoute from "components/ProtectedRoute";
-import { ThemeContext } from "contexts/ThemeContext";
-import AuthContextWrapper from "contexts/AuthContex";
+import { ThemeContext } from "src/context/ThemeContext";
+import { AuthProviderWrapper } from "src/context/AuthContext";
 import { RoutesUrls } from "constants/routes";
 import { Theme } from "constants/themeMode";
 import Layout from "pages/Layout";
@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <AuthContextWrapper>
+      <AuthProviderWrapper>
         <CssBaseline />
         <BrowserRouter>
           <Routes>
@@ -38,7 +38,7 @@ const App = () => {
             </Route>
           </Routes>
         </BrowserRouter>
-      </AuthContextWrapper>
+      </AuthProviderWrapper>
     </ThemeProvider>
   );
 };

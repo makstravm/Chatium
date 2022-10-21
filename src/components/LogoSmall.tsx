@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Box } from "@mui/material";
-import { ThemeContext } from "contexts/ThemeContext";
+import { ThemeContext } from "src/context/ThemeContext";
 import { Theme } from "constants/themeMode";
 import logoLight from "assets/logoSmallLight.png";
 import logoDark from "assets/logoSmallDark.png";

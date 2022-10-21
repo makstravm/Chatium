@@ -1,7 +1,7 @@
 import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import ThemeContextWrapper from "contexts/ThemeContext";
+import ThemeContextWrapper from "src/context/ThemeContext";
 import App from "./App";
 import { store } from "store/index";
 import "./firebase";

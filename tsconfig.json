@@ -17,7 +17,7 @@
       "store/*": ["./src/store/*"],
       "assets/*": ["./src/assets/*"],
       "components/*": ["./src/components/*"],
-      "contexts/*": ["./src/contexts/*"],
+      "context/*": ["src/context/*"],
       "helpers/*": ["./src/helpers/*"],
       "pages/*": ["./src/pages/*"],
       "themes/*": ["./src/themes/*"],

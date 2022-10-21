@@ -8,7 +8,9 @@ export const AuthContext = createContext<IAuthContext>({
   loading: true,
 });
 
-const AuthContextWrapper: FC<{ children: ReactNode }> = ({ children }) => {
+export const AuthProviderWrapper: FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [userData, setUserData] = useState<IAuthContext>({
     user: null,
     loading: true,
@@ -28,5 +30,3 @@ const AuthContextWrapper: FC<{ children: ReactNode }> = ({ children }) => {
     <AuthContext.Provider value={userData}>{children}</AuthContext.Provider>
   );
 };
-
-export default AuthContextWrapper;
