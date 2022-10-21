@@ -12,7 +12,7 @@ const ProtectedRoute = () => {
     return <div>LOADING ................</div>;
   }
 
-  if (auth) {
+  if (!auth) {
     return <Navigate to={RoutesUrls.SIGN_IN} state={location} replace />;
   }
 
