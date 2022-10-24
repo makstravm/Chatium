@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { Form, Formik, FormikProps } from "formik";
 import { FirebaseError } from "firebase/app";
 import {
@@ -11,11 +12,10 @@ import {
   Grid,
   TextField,
 } from "@mui/material";
+import { FieldsTypes } from "constants/fieldsTypes";
 import PasswordField from "../PasswordField";
 import ErrorMessage from "../ErrorMessage";
-import { FieldsTypes } from "constants/fieldsTypes";
 import { FormikValuesType, IFormProps } from "types";
-import { useNavigate } from "react-router-dom";
 
 const { TEXT } = FieldsTypes;
 
