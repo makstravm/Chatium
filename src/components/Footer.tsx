@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Typography } from "@mui/material";
 
-const Footer = () => {
+const Footer: FC = () => {
   const { t } = useTranslation();
 
   return (

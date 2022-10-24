@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { FC, useContext } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { AuthContext } from "context/AuthContext";
 import { RoutesUrls } from "constants/routes";
 
-const ProtectedRoute = () => {
+const ProtectedRoute: FC = () => {
   const { auth, isLoading } = useContext(AuthContext);
 
   const location = useLocation();
