@@ -11,7 +11,7 @@ const Logo = () => {
   return (
     <Box sx={{ p: 2, pt: 3, display: "flex", justifyContent: "center" }}>
       <img
-        src={themeMode === Theme.DARK ? logoDark : logoLight}
+        src={themeMode !== Theme.DARK ? logoDark : logoLight}
         alt="The big logo for Chatium, instant messaging system"
         width="100"
       />
