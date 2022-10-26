@@ -8,6 +8,8 @@ const {
   secondaryMainLight,
   autoFillBgcTextFieldLight,
   errorLight,
+  backgroundPaperLight,
+  boxShadowPaperLight,
 } = colors;
 
 export const lightTheme: ThemeOptions = {
@@ -38,6 +40,20 @@ export const lightTheme: ThemeOptions = {
             },
           },
         },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: backgroundPaperLight,
+          borderRadius: "10px",
+        },
+        elevation3: {
+          boxShadow: `0 0 10px 0px ${boxShadowPaperLight}`,
+        },
+      },
+      defaultProps: {
+        elevation: 3,
       },
     },
   },

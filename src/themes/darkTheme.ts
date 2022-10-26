@@ -8,6 +8,8 @@ const {
   secondaryMainDark,
   autoFillBgcTextFieldDark,
   errorDark,
+  backgroundPaperDark,
+  boxShadowPaperDark,
 } = colors;
 
 export const darkTheme: ThemeOptions = {
@@ -38,6 +40,20 @@ export const darkTheme: ThemeOptions = {
             },
           },
         },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: backgroundPaperDark,
+          borderRadius: "10px",
+        },
+        elevation3: {
+          boxShadow: `0 0 10px 0px ${boxShadowPaperDark}`,
+        },
+      },
+      defaultProps: {
+        elevation: 3,
       },
     },
   },

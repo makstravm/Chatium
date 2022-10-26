@@ -1,23 +1,11 @@
-export {
-  IFormField,
-  ILoginInitialValue,
-  IRegistrationInitialValue,
-} from "types/formConstants";
+export * from "types/formConstants";
 
-export {
-  InitialValuesFormType,
-  ValidationSchemaTypes,
-  IFormProps,
-  FormikValuesType,
-} from "types/formAuth";
+export * from "types/formAuth";
 
-export {
-  ILoginValidationSchema,
-  IRegisterValidationSchema,
-} from "types/helpers";
+export * from "types/helpers";
 
-export { IThemeContext } from "types/context";
+export * from "types/context";
 
-export { IPasswordField } from "types/passwordField";
+export * from "types/passwordField";
 
-export { IErrorMessage } from "types/errorMessage";
+export * from "types/errorMessage";

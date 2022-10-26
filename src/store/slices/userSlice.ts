@@ -11,14 +11,20 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { FormikValuesType } from "types/formAuth";
+import { RoutesUrls } from "constants/routes";
+import { FormikSubmitType } from "types";
+
+const { HOME } = RoutesUrls;
 
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fakeBaseQuery(),
   endpoints: (builder) => ({
-    signIn: builder.mutation<UserInfo | FirebaseError, FormikValuesType>({
-      async queryFn({ email, password, checkbox: rememberMe }) {
+    signIn: builder.mutation<UserInfo | FirebaseError, FormikSubmitType>({
+      async queryFn({
+        values: { email, password, checkbox: rememberMe },
+        navigate,
+      }) {
         const auth = getAuth();
 
         try {
@@ -32,6 +38,7 @@ export const userApi = createApi({
             auth,
             rememberMe ? browserLocalPersistence : browserSessionPersistence
           );
+          navigate(HOME);
 
           return { data: response.user };
         } catch (err) {
@@ -39,8 +46,8 @@ export const userApi = createApi({
         }
       },
     }),
-    signUp: builder.mutation<UserInfo | FirebaseError, FormikValuesType>({
-      async queryFn({ name, email, password }) {
+    signUp: builder.mutation<UserInfo | FirebaseError, FormikSubmitType>({
+      async queryFn({ values: { name, email, password }, navigate }) {
         const auth = getAuth();
 
         try {
@@ -55,6 +62,7 @@ export const userApi = createApi({
           });
 
           await setPersistence(auth, browserSessionPersistence);
+          navigate(HOME, { replace: true });
 
           return { data: response?.user };
         } catch (err) {

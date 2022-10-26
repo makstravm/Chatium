@@ -1,8 +1,14 @@
 import { Theme } from "constants/themeMode";
+import { UserInfo } from "firebase/auth";
 
 const { DARK, LIGHT } = Theme;
 
 export interface IThemeContext {
   themeMode: string;
   changeTheme: (theme: typeof LIGHT | typeof DARK) => void;
+}
+
+export interface IAuthContext {
+  auth: UserInfo | null;
+  isLoading: boolean;
 }
