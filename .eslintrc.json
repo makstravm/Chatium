@@ -39,6 +39,7 @@
     "@typescript-eslint/space-before-function-paren": ["error", "never"],
     "import/no-duplicates": "off",
     "no-useless-escape": "off",
+    "@typescript-eslint/no-extraneous-class": 0,
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/member-delimiter-style": [
