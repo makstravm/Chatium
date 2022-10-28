@@ -1,41 +1,57 @@
-export class HTTPService {
-  static async request<T, V>(
-    url: string,
-    requestMethod: string,
-    requestBody?: V
-  ): Promise<T> {
-    const response = await fetch(url, {
-      method: requestMethod,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestBody),
-    });
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
-    const data = await response.json();
+export const axiosInstance = axios.create();
 
-    if (response.ok) {
-      return data;
+axiosInstance.interceptors.request.use(
+  (config: AxiosRequestConfig): AxiosRequestConfig => config
+);
+
+axiosInstance.interceptors.response.use(
+  (res): AxiosResponse => res,
+  async (err): Promise<AxiosError> => {
+    if (err?.response?.data) {
+      throw err.response.data.error;
     }
 
-    throw data;
+    throw err;
   }
+);
 
-  static async get<T>(url: string) {
-    const resolved = await this.request<T, never>(url, "GET");
+export const GET = async (url: string) => {
+  const result = axiosInstance.get(url);
 
-    return resolved;
-  }
+  return await result;
+};
 
-  static async post<T, V>(url: string, requestBody: V) {
-    const resolved = await this.request<T, V>(url, "POST", requestBody);
+export const POST = async <T, V>(
+  url: string,
+  values: V
+): Promise<AxiosResponse<T>> => {
+  const result = axiosInstance.post(url, values);
 
-    return resolved;
-  }
+  return await result;
+};
 
-  static async put<T>(url: string, requestBody: T) {
-    const resolved = await this.request<T, T>(url, "PUT", requestBody);
+export const PUT = async <T, V>(
+  url: string,
+  values: V
+): Promise<AxiosResponse<T>> => {
+  const result = axiosInstance.put(url, values);
 
-    return resolved;
-  }
-}
+  return await result;
+};
+
+export const DELETE = async <T>(url: string): Promise<AxiosResponse<T>> => {
+  const result = axiosInstance.delete(url);
+
+  return await result;
+};
+
+export const PATCH = async <T, V>(
+  url: string,
+  values: V
+): Promise<AxiosResponse<T>> => {
+  const result = axiosInstance.patch(url, values);
+
+  return await result;
+};
