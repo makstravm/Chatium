@@ -1,10 +1,12 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
-const axiosInstance = axios.create({
+const defaultConfig = {
   headers: {
     "Content-Type": "application/json",
   },
-});
+};
+
+const axiosInstance = axios.create();
 
 axiosInstance.interceptors.request.use(
   (config: AxiosRequestConfig): AxiosRequestConfig => config
@@ -21,8 +23,11 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-export const GET = async (url: string) => {
-  const result = axiosInstance.get(url);
+export const GET = async (
+  url: string,
+  config: AxiosRequestConfig = defaultConfig
+) => {
+  const result = axiosInstance.get(url, config);
 
   return await result;
 };
@@ -30,7 +35,7 @@ export const GET = async (url: string) => {
 export const POST = async <T, V>(
   url: string,
   values: V,
-  config?: AxiosRequestConfig
+  config: AxiosRequestConfig = defaultConfig
 ): Promise<AxiosResponse<T>> => {
   const result = axiosInstance.post(url, values, config);
 
@@ -40,7 +45,7 @@ export const POST = async <T, V>(
 export const PUT = async <T, V>(
   url: string,
   values: V,
-  config?: AxiosRequestConfig
+  config: AxiosRequestConfig = defaultConfig
 ): Promise<AxiosResponse<T>> => {
   const result = axiosInstance.put(url, values, config);
 
@@ -49,7 +54,7 @@ export const PUT = async <T, V>(
 
 export const DELETE = async <T>(
   url: string,
-  config?: AxiosRequestConfig
+  config: AxiosRequestConfig = defaultConfig
 ): Promise<AxiosResponse<T>> => {
   const result = axiosInstance.delete(url, config);
 
@@ -59,7 +64,7 @@ export const DELETE = async <T>(
 export const PATCH = async <T, V>(
   url: string,
   values: V,
-  config?: AxiosRequestConfig
+  config: AxiosRequestConfig = defaultConfig
 ): Promise<AxiosResponse<T>> => {
   const result = axiosInstance.patch(url, values, config);
 
