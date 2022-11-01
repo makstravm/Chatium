@@ -1,6 +1,10 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
-const axiosInstance = axios.create();
+const axiosInstance = axios.create({
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
 axiosInstance.interceptors.request.use(
   (config: AxiosRequestConfig): AxiosRequestConfig => config
