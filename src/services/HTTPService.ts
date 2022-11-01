@@ -1,10 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
-const axiosInstance = axios.create({
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+const axiosInstance = axios.create();
 
 axiosInstance.interceptors.request.use(
   (config: AxiosRequestConfig): AxiosRequestConfig => config
@@ -29,33 +25,39 @@ export const GET = async (url: string) => {
 
 export const POST = async <T, V>(
   url: string,
-  values: V
+  values: V,
+  config?: AxiosRequestConfig
 ): Promise<AxiosResponse<T>> => {
-  const result = axiosInstance.post(url, values);
+  const result = axiosInstance.post(url, values, config);
 
   return await result;
 };
 
 export const PUT = async <T, V>(
   url: string,
-  values: V
+  values: V,
+  config?: AxiosRequestConfig
 ): Promise<AxiosResponse<T>> => {
-  const result = axiosInstance.put(url, values);
+  const result = axiosInstance.put(url, values, config);
 
   return await result;
 };
 
-export const DELETE = async <T>(url: string): Promise<AxiosResponse<T>> => {
-  const result = axiosInstance.delete(url);
+export const DELETE = async <T>(
+  url: string,
+  config?: AxiosRequestConfig
+): Promise<AxiosResponse<T>> => {
+  const result = axiosInstance.delete(url, config);
 
   return await result;
 };
 
 export const PATCH = async <T, V>(
   url: string,
-  values: V
+  values: V,
+  config?: AxiosRequestConfig
 ): Promise<AxiosResponse<T>> => {
-  const result = axiosInstance.patch(url, values);
+  const result = axiosInstance.patch(url, values, config);
 
   return await result;
 };
