@@ -23,11 +23,8 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-export const GET = async (
-  url: string,
-  config: AxiosRequestConfig = defaultConfig
-) => {
-  const result = axiosInstance.get(url, config);
+export const GET = async (url: string) => {
+  const result = axiosInstance.get(url);
 
   return await result;
 };
