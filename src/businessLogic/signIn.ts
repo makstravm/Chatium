@@ -17,6 +17,12 @@ export const signIn = async (
       returnSecureToken: true,
     });
 
+    if (!values?.checkbox) {
+      sessionStorage.setItem("token", data.refreshToken);
+    } else {
+      localStorage.setItem("token", data.refreshToken);
+    }
+
     return { user: data, error: null };
   } catch (error) {
     return { error: error as IErrorResponse, user: null };
