@@ -1,9 +1,9 @@
-import { User } from "@firebase/auth-types";
-import { FirebaseError } from "firebase/app";
+import { IErrorResponse } from "./error";
+import { IUserResponseSignIn } from "./user";
 
 export interface IResponseSignIn {
-  user: User | null;
-  error: FirebaseError | null;
+  user: IUserResponseSignIn | null;
+  error: IErrorResponse | null;
 }
 
 export interface ISignInValues {
