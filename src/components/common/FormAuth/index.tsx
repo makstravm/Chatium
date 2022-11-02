@@ -10,9 +10,9 @@ import {
   Grid,
   TextField,
 } from "@mui/material";
-import { FieldsTypes } from "constants/fieldsTypes";
 import PasswordField from "../PasswordField";
-import ErrorMessage from "../ErrorMessage";
+import { ErrorMessage } from "../ErrorMessage";
+import { FieldsTypes } from "constants/fieldsTypes";
 import { FormikValuesType, IFormProps } from "types";
 
 const { TEXT } = FieldsTypes;

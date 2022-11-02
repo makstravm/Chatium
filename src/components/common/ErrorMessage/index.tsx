@@ -7,15 +7,19 @@ import style from "./ErrorMessage.module.scss";
 export const ErrorMessage: FC<IErrorMessage> = ({ errorMessage }) => {
   const { t } = useTranslation();
 
-  const keyCode = errorMessage.code.split("/")[1];
+  const handlerErrorMessage = () => {
+    if (errorMessage.includes(" ")) {
+      return errorMessage.split(" ").join("_").toLowerCase();
+    }
+
+    return errorMessage.toLowerCase();
+  };
 
   return (
     <Alert variant="outlined" severity="error">
       <div className={style.errorMessage}>
-        {t(`auth.serverError.${keyCode}`)}
+        {t(`auth.serverError.${handlerErrorMessage()}`)}
       </div>
     </Alert>
   );
 };
-
-export default ErrorMessage;
