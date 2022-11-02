@@ -1,8 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 import { Form, Formik, FormikProps } from "formik";
-import { FirebaseError } from "firebase/app";
 import {
   Box,
   Button,
@@ -19,7 +17,7 @@ import { FormikValuesType, IFormProps } from "types";
 
 const { TEXT } = FieldsTypes;
 
-const FormAuth: FC<IFormProps> = ({
+export const FormAuth: FC<IFormProps> = ({
   initialValues,
   validationSchema,
   formFields,
@@ -28,17 +26,14 @@ const FormAuth: FC<IFormProps> = ({
   labelCheckBox,
   isLoading,
   errorMessage,
-  isError,
 }) => {
   const { t } = useTranslation();
-
-  const navigate = useNavigate();
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(values) => onSubmit({ values, navigate })}
+      onSubmit={(values) => onSubmit(values)}
     >
       {({
         errors,
@@ -51,14 +46,14 @@ const FormAuth: FC<IFormProps> = ({
           sx={{
             pt: 4,
             borderRadius: "15px",
-            boxShadow: `0 0 10px 0px ${!isError ? "#404040" : "#c51111"}`,
+            boxShadow: `0 0 10px 0px ${!errorMessage ? "#404040" : "#c51111"}`,
           }}
         >
           <Form>
             <Grid container justifyContent="center" spacing={2}>
-              {isError && (
+              {errorMessage && (
                 <Grid item xs={10}>
-                  <ErrorMessage errorMessage={errorMessage as FirebaseError} />
+                  <ErrorMessage errorMessage={errorMessage} />
                 </Grid>
               )}
               {formFields.map(({ id, name, type }) => (
@@ -134,5 +129,3 @@ const FormAuth: FC<IFormProps> = ({
     </Formik>
   );
 };
-
-export default FormAuth;

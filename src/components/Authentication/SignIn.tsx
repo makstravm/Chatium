@@ -1,15 +1,34 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Box, Grid, Typography } from "@mui/material";
-import FormAuth from "components/common/FormAuth";
+import { FormAuth } from "components/common/FormAuth";
 import { loginInitialValue } from "constants/forms/loginInitialValue";
 import { loginFormFields } from "constants/forms/loginFormsFields";
 import { RoutesUrls } from "constants/routes";
-import { useSignInMutation } from "store/slices/userSlice";
+import { signIn } from "businessLogic/signIn";
 import { loginValidationSchema } from "lib/schema/loginValidationSchema";
+import { FormikValuesType } from "types";
 
-const SignIn = () => {
-  const [signIn, { isLoading, error, isError }] = useSignInMutation();
+export const SignIn = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const navigate = useNavigate();
+
+  const handleOnSubmit = async (values: FormikValuesType) => {
+    setIsLoading(true);
+    const { user, error } = await signIn(values);
+
+    if (user) {
+      navigate(RoutesUrls.HOME);
+    }
+    if (error) {
+      setErrorMessage(error.message);
+    }
+    setIsLoading(false);
+  };
 
   const { t } = useTranslation();
 
@@ -25,14 +44,13 @@ const SignIn = () => {
       </Box>
       <FormAuth
         initialValues={loginInitialValue}
-        onSubmit={signIn}
+        onSubmit={handleOnSubmit}
         formFields={loginFormFields}
         buttonTitle={t("auth.signIn.buttonTitle")}
         validationSchema={loginValidationSchema}
         labelCheckBox={t("auth.signIn.checkBoxRemember")}
         isLoading={isLoading}
-        errorMessage={error}
-        isError={isError}
+        errorMessage={errorMessage}
       />
       <Grid container spacing={1} justifyContent={"center"} pt={3} pb={1}>
         <Grid item>
@@ -47,5 +65,3 @@ const SignIn = () => {
     </>
   );
 };
-
-export default SignIn;

@@ -1,4 +1,3 @@
-import { NavigateFunction } from "react-router-dom";
 import { SchemaOf } from "yup";
 import {
   IFormField,
@@ -10,11 +9,6 @@ import {
 
 export interface FormikValuesType {
   [key: string]: string | boolean;
-}
-
-export interface FormikSubmitType {
-  values: FormikValuesType;
-  navigate: NavigateFunction;
 }
 
 export type InitialValuesFormType =
@@ -29,10 +23,9 @@ export interface IFormProps {
   initialValues: FormikValuesType;
   formFields: IFormField[];
   buttonTitle: string;
-  onSubmit: (values: FormikSubmitType) => void;
+  onSubmit: (values: FormikValuesType) => void;
   validationSchema: SchemaOf<ValidationSchemaTypes>;
   labelCheckBox?: string;
   isLoading: boolean;
-  errorMessage?: string | unknown;
-  isError: boolean;
+  errorMessage: string | null;
 }
