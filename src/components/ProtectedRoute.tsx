@@ -12,7 +12,9 @@ const ProtectedRoute: FC = () => {
     return <div>LOADING ................</div>;
   }
 
-  if (!auth) {
+  // this conditional is mocked in this branch
+
+  if (auth) {
     return <Navigate to={RoutesUrls.SIGN_IN} state={location} replace />;
   }
 

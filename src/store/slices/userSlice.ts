@@ -1,52 +1,31 @@
+import { NavigateFunction } from "react-router-dom";
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { FirebaseError } from "firebase/app";
 import { UserInfo } from "@firebase/auth-types";
 import {
-  browserLocalPersistence,
   browserSessionPersistence,
   createUserWithEmailAndPassword,
   getAuth,
   setPersistence,
-  signInWithEmailAndPassword,
   signOut,
   updateProfile,
 } from "firebase/auth";
 import { RoutesUrls } from "constants/routes";
-import { FormikSubmitType } from "types";
+import { FormikValuesType } from "types";
 
 const { HOME } = RoutesUrls;
+
+interface MockType {
+  values: FormikValuesType;
+  navigate: NavigateFunction;
+}
 
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fakeBaseQuery(),
   endpoints: (builder) => ({
-    signIn: builder.mutation<UserInfo | FirebaseError, FormikSubmitType>({
-      async queryFn({
-        values: { email, password, checkbox: rememberMe },
-        navigate,
-      }) {
-        const auth = getAuth();
-
-        try {
-          const response = await signInWithEmailAndPassword(
-            auth,
-            email as string,
-            password as string
-          );
-
-          await setPersistence(
-            auth,
-            rememberMe ? browserLocalPersistence : browserSessionPersistence
-          );
-          navigate(HOME);
-
-          return { data: response.user };
-        } catch (err) {
-          return { error: err as FirebaseError };
-        }
-      },
-    }),
-    signUp: builder.mutation<UserInfo | FirebaseError, FormikSubmitType>({
+    signUp: builder.mutation<UserInfo | FirebaseError, MockType>({
+      // this any is mocked. this method will been remove later
       async queryFn({ values: { name, email, password }, navigate }) {
         const auth = getAuth();
 
@@ -84,5 +63,4 @@ export const userApi = createApi({
   }),
 });
 
-export const { useSignInMutation, useSignUpMutation, useLogOutMutation } =
-  userApi;
+export const { useSignUpMutation, useLogOutMutation } = userApi;

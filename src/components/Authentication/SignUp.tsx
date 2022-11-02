@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Box, Grid, Typography } from "@mui/material";
-import FormAuth from "components/common/FormAuth";
+import { FormAuth } from "components/common/FormAuth";
 import { registrationFormFields } from "constants/forms/registrationFormsFields";
 import { registrationInitialValue } from "constants/forms/registrationInitialValue";
 import { RoutesUrls } from "constants/routes";
 import { useSignUpMutation } from "store/slices/userSlice";
 import { registerValidationSchema } from "lib/schema/registrationValidationSchema";
+import { FormikValuesType } from "src/types";
 
 const SignUp = () => {
-  const [signUp, { isLoading, error, isError }] = useSignUpMutation();
+  const [signUp, { isLoading }] = useSignUpMutation();
 
   const { t } = useTranslation();
 
@@ -25,13 +26,13 @@ const SignUp = () => {
       </Box>
       <FormAuth
         initialValues={registrationInitialValue}
-        onSubmit={signUp}
+        onSubmit={(values: FormikValuesType) => signUp} // this is mocked value in this branch
         formFields={registrationFormFields}
         buttonTitle={t("auth.signUp.buttonTitle")}
         validationSchema={registerValidationSchema}
         isLoading={isLoading}
-        errorMessage={error}
-        isError={isError}
+        // this is mocked value in this branch
+        errorMessage={"error"}
       />
       <Grid container spacing={1} justifyContent={"center"} pt={3} pb={1}>
         <Grid item>
