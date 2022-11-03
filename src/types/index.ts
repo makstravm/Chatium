@@ -10,8 +10,6 @@ export * from "types/passwordField";
 
 export * from "types/errorMessage";
 
-export * from "types/signIn";
-
-export * from "types/user";
+export * from "types/auth";
 
 export * from "types/error";

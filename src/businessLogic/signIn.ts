@@ -1,17 +1,15 @@
 import { signInApi } from "api/signIn";
 import {
-  IUserResponseSignIn,
   FormikValuesType,
   IResponseSignIn,
-  ISignInValues,
+  IRequestAuthValues,
   IErrorResponse,
+  ISignIn,
 } from "types";
 
-export const signIn = async (
-  values: FormikValuesType
-): Promise<IResponseSignIn> => {
+export const signIn = async (values: FormikValuesType): Promise<ISignIn> => {
   try {
-    const { data } = await signInApi<IUserResponseSignIn, ISignInValues>({
+    const { data } = await signInApi<IResponseSignIn, IRequestAuthValues>({
       email: values.email as string,
       password: values.password as string,
       returnSecureToken: true,
