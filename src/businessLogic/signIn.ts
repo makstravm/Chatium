@@ -1,18 +1,12 @@
 import { signInApi } from "api/signIn";
 import { saveTokenInStorage } from "src/helpers/storeToken";
-import {
-  IResponseSignIn,
-  IRequestAuthValues,
-  IErrorResponse,
-  ISignIn,
-  FormikSignInValuesType,
-} from "types";
+import { IErrorResponse, ISignIn, FormikSignInValuesType } from "types";
 
 export const signIn = async (
   values: FormikSignInValuesType
 ): Promise<ISignIn> => {
   try {
-    const { data } = await signInApi<IResponseSignIn, IRequestAuthValues>({
+    const { data } = await signInApi({
       email: values.email,
       password: values.password,
       returnSecureToken: true,
