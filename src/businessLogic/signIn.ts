@@ -1,4 +1,5 @@
 import { signInApi } from "api/signIn";
+import { saveTokenInStorage } from "src/helpers/storeToken";
 import {
   IResponseSignIn,
   IRequestAuthValues,
@@ -17,11 +18,7 @@ export const signIn = async (
       returnSecureToken: true,
     });
 
-    if (!values?.rememberMe) {
-      sessionStorage.setItem("token", data.refreshToken);
-    } else {
-      localStorage.setItem("token", data.refreshToken);
-    }
+    saveTokenInStorage(values.rememberMe, data.refreshToken);
 
     return { user: data, error: null };
   } catch (error) {
