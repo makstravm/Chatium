@@ -8,3 +8,6 @@ export const saveTokenInStorage = (
 
   return localStorage.setItem("token", token);
 };
+
+export const getToken = () =>
+  sessionStorage?.token || localStorage?.token || null;
