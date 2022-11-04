@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { Form, Formik, FormikProps } from "formik";
+import { Form, Formik, FormikProps, getIn } from "formik";
 import {
   Box,
   Button,
@@ -65,10 +65,10 @@ export const FormAuth: FC<IFormProps> = ({
                       type={type}
                       size="small"
                       fullWidth
-                      error={!!(touched[name] && errors[name])}
+                      error={!!(getIn(touched, name) && getIn(errors, name))}
                       helperText={
-                        !!(touched[name] && errors[name]) &&
-                        t(`auth.validError.${errors[name] as string}`)
+                        !!(getIn(touched, name) && getIn(errors, name)) &&
+                        t(`auth.validError.${getIn(errors, name)}`)
                       }
                       onChange={handleChange}
                     />

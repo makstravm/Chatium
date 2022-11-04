@@ -11,12 +11,12 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { RoutesUrls } from "constants/routes";
-import { FormikValuesType } from "types";
+import { FormikSignUpValuesType } from "types";
 
 const { HOME } = RoutesUrls;
 
 interface MockType {
-  values: FormikValuesType;
+  values: FormikSignUpValuesType;
   navigate: NavigateFunction;
 }
 
@@ -32,12 +32,12 @@ export const userApi = createApi({
         try {
           const response = await createUserWithEmailAndPassword(
             auth,
-            email as string,
-            password as string
+            email,
+            password
           );
 
           await updateProfile(response.user, {
-            displayName: name as string,
+            displayName: name,
           });
 
           await setPersistence(auth, browserSessionPersistence);

@@ -8,7 +8,7 @@ import { loginFormFields } from "constants/forms/loginFormsFields";
 import { RoutesUrls } from "constants/routes";
 import { signIn } from "businessLogic/signIn";
 import { loginValidationSchema } from "lib/schema/loginValidationSchema";
-import { FormikValuesType } from "types";
+import { FormikSignInValuesType, FormikValuesType } from "types";
 
 export const SignIn = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -19,7 +19,7 @@ export const SignIn = () => {
 
   const handleOnSubmit = async (values: FormikValuesType) => {
     setIsLoading(true);
-    const { user, error } = await signIn(values);
+    const { user, error } = await signIn(values as FormikSignInValuesType);
 
     if (user) {
       navigate(RoutesUrls.HOME);

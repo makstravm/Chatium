@@ -7,8 +7,19 @@ import {
   IRegistrationInitialValue,
 } from "types";
 
-export interface FormikValuesType {
-  [key: string]: string | boolean;
+export type FormikValuesType = FormikSignInValuesType | FormikSignUpValuesType;
+
+export interface FormikSignInValuesType {
+  email: string;
+  password: string;
+  rememberMe: boolean;
+}
+
+export interface FormikSignUpValuesType {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 }
 
 export type InitialValuesFormType =
