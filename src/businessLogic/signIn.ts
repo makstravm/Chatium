@@ -2,17 +2,19 @@ import { signInApi } from "api/signIn";
 import { saveTokenInStorage } from "src/helpers/storeToken";
 import { IErrorResponse, ISignIn, FormikSignInValuesType } from "types";
 
-export const signIn = async (
-  values: FormikSignInValuesType
-): Promise<ISignIn> => {
+export const signIn = async ({
+  email,
+  password,
+  rememberMe,
+}: FormikSignInValuesType): Promise<ISignIn> => {
   try {
     const { data } = await signInApi({
-      email: values.email,
-      password: values.password,
+      email,
+      password,
       returnSecureToken: true,
     });
 
-    saveTokenInStorage(values.rememberMe, data.refreshToken);
+    saveTokenInStorage(rememberMe, data.refreshToken);
 
     return { user: data, error: null };
   } catch (error) {
