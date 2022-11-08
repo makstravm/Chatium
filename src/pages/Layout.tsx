@@ -1,13 +1,16 @@
 import { Container, Divider, Grid, Paper } from "@mui/material";
 import Footer from "components/Footer";
 import { LogoSmall } from "components/LogoSmall";
+import { AsideContainer } from "src/components/AsideContainer";
 
 const Layout = () => (
   <Container maxWidth="xl">
     <Grid container wrap="nowrap" height="100vh" flexDirection="column">
       <LogoSmall />
       <Grid container component={Paper} flexGrow="1">
-        <Grid item xs={3} justifyContent="space-between"></Grid>
+        <Grid item xs={3} justifyContent="space-between">
+          <AsideContainer />
+        </Grid>
         <Divider orientation="vertical" flexItem />
         <Grid item xs="auto">
           Chat
