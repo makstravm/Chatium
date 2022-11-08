@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { ChatsList } from "./ChatsList";
 
 export const AsideContainer = () => (
   <Box p={1}>
@@ -25,5 +26,6 @@ export const AsideContainer = () => (
       />
     </Box>
     <Divider />
+    <ChatsList />
   </Box>
 );

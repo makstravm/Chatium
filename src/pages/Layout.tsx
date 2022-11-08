@@ -8,7 +8,7 @@ const Layout = () => (
     <Grid container wrap="nowrap" height="100vh" flexDirection="column">
       <LogoSmall />
       <Grid container component={Paper} flexGrow="1">
-        <Grid item xs={3} justifyContent="space-between">
+        <Grid item xs={3} md={3} justifyContent="space-between">
           <AsideContainer />
         </Grid>
         <Divider orientation="vertical" flexItem />
