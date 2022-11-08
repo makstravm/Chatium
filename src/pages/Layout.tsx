@@ -1,4 +1,4 @@
-import { Container, Grid, Paper } from "@mui/material";
+import { Container, Divider, Grid, Paper } from "@mui/material";
 import Footer from "components/Footer";
 import { LogoSmall } from "components/LogoSmall";
 
@@ -7,10 +7,9 @@ const Layout = () => (
     <Grid container wrap="nowrap" height="100vh" flexDirection="column">
       <LogoSmall />
       <Grid container component={Paper} flexGrow="1">
-        <Grid item xs={3}>
-          Aside
-        </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={3} justifyContent="space-between"></Grid>
+        <Divider orientation="vertical" flexItem />
+        <Grid item xs="auto">
           Chat
         </Grid>
       </Grid>
