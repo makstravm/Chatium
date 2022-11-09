@@ -1,8 +1,8 @@
-export const saveTokenInStorage = (
-  isSaveLocalStorage: boolean,
+export const setTokenInStorage = (
+  isSetTokenInLocalStorage: boolean,
   token: string
 ) => {
-  if (!isSaveLocalStorage) {
+  if (!isSetTokenInLocalStorage) {
     return sessionStorage.setItem("token", token);
   }
 
