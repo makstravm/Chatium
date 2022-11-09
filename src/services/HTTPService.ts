@@ -1,4 +1,5 @@
-import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import { handleError } from "helpers/handleError";
 
 const defaultConfig = {
   headers: {
@@ -14,12 +15,10 @@ axiosInstance.interceptors.request.use(
 
 axiosInstance.interceptors.response.use(
   (res): AxiosResponse => res,
-  async (err): Promise<AxiosError> => {
-    if (err?.response?.data) {
-      throw err.response.data.error;
-    }
+  (err) => {
+    const error = handleError(err);
 
-    throw err;
+    return error;
   }
 );
 

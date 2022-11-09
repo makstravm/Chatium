@@ -1,4 +1,6 @@
 export interface IError {
-  code: number;
-  message: string;
+  error: {
+    code?: number | string;
+    message?: string;
+  };
 }
