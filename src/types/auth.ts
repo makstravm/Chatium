@@ -1,14 +1,13 @@
-import { IErrorResponse } from "./error";
+import { IError } from "./error";
 
 export interface ISignIn {
   user: IResponseSignIn | null;
-  error: IErrorResponse | null;
+  error: IError | null;
 }
 
 export interface IRequestAuthValues {
   email: string;
   password: string;
-  returnSecureToken: boolean;
 }
 
 export interface IResponseSignIn {

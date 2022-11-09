@@ -23,47 +23,27 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-export const GET = async (url: string) => {
-  const result = axiosInstance.get(url);
-
-  return await result;
-};
+export const GET = async (url: string) => await axiosInstance.get(url);
 
 export const POST = async <T, V>(
   url: string,
   values: V,
   config: AxiosRequestConfig = defaultConfig
-): Promise<AxiosResponse<T>> => {
-  const result = axiosInstance.post(url, values, config);
-
-  return await result;
-};
+): Promise<AxiosResponse<T>> => await axiosInstance.post(url, values, config);
 
 export const PUT = async <T, V>(
   url: string,
   values: V,
   config: AxiosRequestConfig = defaultConfig
-): Promise<AxiosResponse<T>> => {
-  const result = axiosInstance.put(url, values, config);
-
-  return await result;
-};
+): Promise<AxiosResponse<T>> => await axiosInstance.put(url, values, config);
 
 export const DELETE = async <T>(
   url: string,
   config: AxiosRequestConfig = defaultConfig
-): Promise<AxiosResponse<T>> => {
-  const result = axiosInstance.delete(url, config);
-
-  return await result;
-};
+): Promise<AxiosResponse<T>> => await axiosInstance.delete(url, config);
 
 export const PATCH = async <T, V>(
   url: string,
   values: V,
   config: AxiosRequestConfig = defaultConfig
-): Promise<AxiosResponse<T>> => {
-  const result = axiosInstance.patch(url, values, config);
-
-  return await result;
-};
+): Promise<AxiosResponse<T>> => await axiosInstance.patch(url, values, config);
