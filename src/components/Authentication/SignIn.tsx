@@ -24,7 +24,7 @@ export const SignIn = () => {
     if (user) {
       navigate(RoutesUrls.HOME);
     }
-    if (error) {
+    if (error?.message) {
       setErrorMessage(error.message);
     }
     setIsLoading(false);
