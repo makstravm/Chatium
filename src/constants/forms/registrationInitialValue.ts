@@ -3,5 +3,4 @@ export const registrationInitialValue = {
   email: "",
   password: "",
   confirmPassword: "",
-  checkbox: false,
 };

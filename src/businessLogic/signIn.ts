@@ -8,7 +8,7 @@ import { IError, ISignIn, FormikSignInValuesType } from "types";
 export const signIn = async ({
   email,
   password,
-  rememberMe,
+  isRememberUser,
 }: FormikSignInValuesType): Promise<ISignIn> => {
   try {
     const { data } = await signInApi({
@@ -16,7 +16,7 @@ export const signIn = async ({
       password,
     });
 
-    saveTokenInStorage(rememberMe, data.refreshToken);
+    saveTokenInStorage(isRememberUser, data.refreshToken);
 
     return { user: data, error: null };
   } catch (err) {

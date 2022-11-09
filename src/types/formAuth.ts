@@ -12,7 +12,7 @@ export type FormikValuesType = FormikSignInValuesType | FormikSignUpValuesType;
 export interface FormikSignInValuesType {
   email: string;
   password: string;
-  rememberMe: boolean;
+  isRememberUser: boolean;
 }
 
 export interface FormikSignUpValuesType {

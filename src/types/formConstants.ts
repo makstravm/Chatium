@@ -7,7 +7,7 @@ export interface IFormField {
 export interface ILoginInitialValue {
   email: string;
   password: string;
-  checkbox: boolean;
+  isRememberUser: boolean;
 }
 
 export interface IRegistrationInitialValue {
@@ -15,5 +15,4 @@ export interface IRegistrationInitialValue {
   email: string;
   password: string;
   confirmPassword: string;
-  checkbox: boolean;
 }
