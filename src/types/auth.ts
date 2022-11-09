@@ -8,6 +8,7 @@ export interface ISignIn {
 export interface IRequestAuthValues {
   email: string;
   password: string;
+  returnSecureToken: boolean;
 }
 
 export interface IResponseSignIn {
