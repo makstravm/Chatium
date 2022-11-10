@@ -10,8 +10,8 @@ import {
   Grid,
   TextField,
 } from "@mui/material";
-import PasswordField from "../PasswordField";
-import { ErrorMessage } from "../ErrorMessage";
+import PasswordField from "./PasswordField";
+import { ErrorMessage } from "./ErrorMessageAuth";
 import { FieldsTypes } from "constants/fieldsTypes";
 import { IFormProps } from "types";
 

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Formik, FormikProps } from "formik";
 import { Box, Grid, Typography } from "@mui/material";
-import { FormAuth } from "components/common/FormAuth";
+import { FormAuth } from "src/components/Authentication/FormAuth";
 import { loginInitialValue } from "constants/forms/loginInitialValue";
 import { loginFormFields } from "constants/forms/loginFormsFields";
 import { RoutesUrls } from "constants/routes";

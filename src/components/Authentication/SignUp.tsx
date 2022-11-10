@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Formik, FormikProps } from "formik";
 import { Box, Grid, Typography } from "@mui/material";
-import { FormAuth } from "components/common/FormAuth";
+import { FormAuth } from "src/components/Authentication/FormAuth";
 import { registrationFormFields } from "constants/forms/registrationFormsFields";
 import { registrationInitialValue } from "constants/forms/registrationInitialValue";
 import { RoutesUrls } from "constants/routes";
