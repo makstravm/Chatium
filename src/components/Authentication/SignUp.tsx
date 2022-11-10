@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Formik, FormikProps } from "formik";
 import { Box, Grid, Typography } from "@mui/material";
 import { FormAuth } from "components/common/FormAuth";
 import { registrationFormFields } from "constants/forms/registrationFormsFields";
@@ -7,12 +8,15 @@ import { registrationInitialValue } from "constants/forms/registrationInitialVal
 import { RoutesUrls } from "constants/routes";
 import { useSignUpMutation } from "store/slices/userSlice";
 import { registerValidationSchema } from "lib/schema/registrationValidationSchema";
-import { FormikValuesType } from "src/types";
+import { FormikSignUpValuesType } from "types";
 
 const SignUp = () => {
   const [signUp, { isLoading }] = useSignUpMutation();
 
   const { t } = useTranslation();
+
+  // function is  mocked
+  const navigate = useNavigate();
 
   return (
     <>
@@ -24,16 +28,22 @@ const SignUp = () => {
           {t("auth.signUp.subtitle")}
         </Typography>
       </Box>
-      <FormAuth
+      <Formik
         initialValues={registrationInitialValue}
-        onSubmit={(values: FormikValuesType) => signUp} // this is mocked value in this branch
-        formFields={registrationFormFields}
-        buttonTitle={t("auth.signUp.buttonTitle")}
         validationSchema={registerValidationSchema}
-        isLoading={isLoading}
-        // this is mocked value in this branch
-        errorMessage={"error"}
-      />
+        onSubmit={async (values) => await signUp({ values, navigate })} // this is mocked value in this branch
+      >
+        {(formik: FormikProps<FormikSignUpValuesType>) => (
+          <FormAuth
+            // this is mocked value in this branch
+            errorMessage={"error"}
+            formFields={registrationFormFields}
+            buttonTitle={t("auth.signUp.buttonTitle")}
+            isLoading={isLoading}
+            formik={formik}
+          />
+        )}
+      </Formik>
       <Grid container spacing={1} justifyContent={"center"} pt={3} pb={1}>
         <Grid item>
           <Typography variant="body1" component="div" align="center">

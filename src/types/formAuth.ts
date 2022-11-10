@@ -1,4 +1,3 @@
-import { SchemaOf } from "yup";
 import {
   IFormField,
   ILoginInitialValue,
@@ -6,8 +5,11 @@ import {
   IRegisterValidationSchema,
   IRegistrationInitialValue,
 } from "types";
+import { FormikProps } from "formik";
 
-export type FormikValuesType = FormikSignInValuesType | FormikSignUpValuesType;
+export type FormikValuesType =
+  | FormikProps<FormikSignInValuesType>
+  | FormikProps<FormikSignUpValuesType>;
 
 export interface FormikSignInValuesType {
   email: string;
@@ -31,12 +33,10 @@ export type ValidationSchemaTypes =
   | ILoginValidationSchema;
 
 export interface IFormProps {
-  initialValues: FormikValuesType;
+  formik: FormikValuesType;
   formFields: IFormField[];
-  buttonTitle: string;
-  onSubmit: (values: FormikValuesType) => void;
-  validationSchema: SchemaOf<ValidationSchemaTypes>;
   labelCheckBox?: string;
   isLoading: boolean;
+  buttonTitle: string;
   errorMessage: string | null;
 }
