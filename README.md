@@ -18,6 +18,8 @@ REACT_APP_FIREBASE_PROJECT_ID          = chatium-skillup
 REACT_APP_FIREBASE_STORAGE_BUCKET      = chatium-skillup.appspot.com
 REACT_APP_FIREBASE_MESSAGING_SENDER_ID = 1052464195614
 REACT_APP_FIREBASE_APP_ID              = 1:1052464195614:web:1eda4d9cdccd1af276260f
+
+FIREBASE_AUTH_API_PATH                      = https://identitytoolkit.googleapis.com/v1/accounts:
 ```
 
 - Start project `npm start`
