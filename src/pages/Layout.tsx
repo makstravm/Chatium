@@ -7,12 +7,17 @@ const Layout = () => (
   <Container maxWidth="xl">
     <Grid container wrap="nowrap" height="100vh" flexDirection="column">
       <LogoSmall />
-      <Grid container component={Paper} flexGrow="1">
-        <Grid item xs={3} md={3} justifyContent="space-between">
+      <Grid
+        container
+        component={Paper}
+        flexGrow="1"
+        maxHeight={"calc(100vh - 78px)"}
+      >
+        <Grid item md={3} xs={4} justifyContent="space-between">
           <AsideContainer />
         </Grid>
         <Divider orientation="vertical" flexItem />
-        <Grid item xs="auto">
+        <Grid item xs>
           Chat
         </Grid>
       </Grid>

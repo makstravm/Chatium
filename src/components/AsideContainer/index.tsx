@@ -9,7 +9,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { ChatsList } from "./ChatsList";
 
 export const AsideContainer = () => (
-  <Box p={1}>
+  <Box p={1} sx={{ overflow: "hidden" }}>
     <Box pb={1}>
       <Typography variant="h6" component="h6" fontWeight={700} align="left">
         Chats
