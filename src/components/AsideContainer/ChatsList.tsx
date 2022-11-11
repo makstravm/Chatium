@@ -1,4 +1,8 @@
-import { Avatar, Box, Grid, Typography } from "@mui/material";
+import { Avatar, Grid, Typography } from "@mui/material";
+import { useContext } from "react";
+import { ThemeContext } from "context/ThemeContext";
+import { CustomScroll } from "../CustomScroll";
+
 // this constant is mocked
 const chatsList = [
   {
@@ -80,47 +84,56 @@ const chatsList = [
   },
 ] as const;
 
-export const ChatsList = () => (
-  <Box sx={{ "overflow-y": "scroll", height: "calc(100vh - 176px)" }}>
-    {chatsList.map(({ id, name, lastMessage, time }) => (
-      <Grid container wrap="nowrap" key={id} pt={1} pb={1} alignItems="center">
-        <Grid item pr={1}>
-          {/* mocked */}
-          <Avatar alt={name} src={name} />
-        </Grid>
-        <Grid
-          item
-          alignSelf="end"
-          sx={{
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-          }}
-          xs
-        >
-          <Grid container justifyContent="space-between">
-            <Grid item>
-              <Typography variant="body1" fontWeight={700} align="left">
-                {name}
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="caption">{time}</Typography>
-            </Grid>
-          </Grid>
+export const ChatsList = () => {
+  const { themeMode } = useContext(ThemeContext);
 
-          <Typography
-            component="div"
-            variant="caption"
-            fontFamily="cursive"
+  return (
+    <CustomScroll theme={themeMode} style={{ height: "calc(100vh - 176px)" }}>
+      {chatsList.map(({ id, name, lastMessage, time }) => (
+        <Grid
+          container
+          wrap="nowrap"
+          key={id}
+          sx={{ padding: "8px 12px 8px 8px" }}
+          alignItems="center"
+        >
+          <Grid item pr={1}>
+            {/* mocked */}
+            <Avatar alt={name} src={name} />
+          </Grid>
+          <Grid
+            item
+            alignSelf="end"
             sx={{
               overflow: "hidden",
-              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
             }}
+            xs
           >
-            {lastMessage}
-          </Typography>
+            <Grid container justifyContent="space-between">
+              <Grid item>
+                <Typography variant="body1" fontWeight={700} align="left">
+                  {name}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant="caption">{time}</Typography>
+              </Grid>
+            </Grid>
+            <Typography
+              component="div"
+              variant="caption"
+              fontFamily="cursive"
+              sx={{
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {lastMessage}
+            </Typography>
+          </Grid>
         </Grid>
-      </Grid>
-    ))}
-  </Box>
-);
+      ))}
+    </CustomScroll>
+  );
+};

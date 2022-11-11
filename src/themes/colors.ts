@@ -5,6 +5,8 @@ export const colors = {
   backgroundLight: "#e1e1e1",
   backgroundPaperLight: "#fafafa",
   backgroundPaperDark: "#0a0a0a",
+  bgcScrollDark: "#757575",
+  bgcScrollLight: "#e1e1e1",
   boxShadowPaperDark: "#9e9e9e",
   boxShadowPaperLight: "#848484",
   primaryMainDark: "#bdbdbd",
