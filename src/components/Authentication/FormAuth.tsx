@@ -13,11 +13,11 @@ import {
 import PasswordField from "./PasswordField";
 import { ErrorMessage } from "./ErrorMessageAuth";
 import { FieldsTypes } from "constants/fieldsTypes";
-import { IFormProps } from "types";
+import { IFormAuthProps } from "types";
 
 const { TEXT } = FieldsTypes;
 
-export const FormAuth: FC<IFormProps> = ({
+export const FormAuth: FC<IFormAuthProps> = ({
   formik,
   isLoading,
   buttonTitle,
@@ -79,7 +79,7 @@ export const FormAuth: FC<IFormProps> = ({
                 label={labelCheckBox}
                 componentsProps={{
                   typography: {
-                    fontSize: ".9em",
+                    fontSize: ".9rem",
                   },
                 }}
               />

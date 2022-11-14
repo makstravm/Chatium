@@ -32,7 +32,7 @@ export type ValidationSchemaTypes =
   | IRegisterValidationSchema
   | ILoginValidationSchema;
 
-export interface IFormProps {
+export interface IFormAuthProps {
   formik: FormikValuesType;
   formFields: IFormField[];
   labelCheckBox?: string;

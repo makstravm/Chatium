@@ -5,9 +5,12 @@ export interface ISignIn {
   error: IError | null;
 }
 
-export interface IRequestAuthValues {
+export interface IEmailAndPassword {
   email: string;
   password: string;
+}
+
+export interface IRequestAuthValues extends IEmailAndPassword {
   returnSecureToken: boolean;
 }
 
