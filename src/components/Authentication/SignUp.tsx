@@ -8,15 +8,23 @@ import { registrationInitialValue } from "constants/forms/registrationInitialVal
 import { RoutesUrls } from "constants/routes";
 import { useSignUpMutation } from "store/slices/userSlice";
 import { registerValidationSchema } from "lib/schema/registrationValidationSchema";
-import { FormikSignUpValuesType } from "types";
+import { FormikSignUpValuesType, IError } from "types";
 
 const SignUp = () => {
-  const [signUp, { isLoading }] = useSignUpMutation();
+  const [signUp, { isLoading, error }] = useSignUpMutation();
 
   const { t } = useTranslation();
 
   // function is  mocked
   const navigate = useNavigate();
+
+  const handleError = (error: IError): string | null => {
+    if (error?.message) {
+      return error.message;
+    }
+
+    return null;
+  };
 
   return (
     <>
@@ -36,7 +44,7 @@ const SignUp = () => {
         {(formik: FormikProps<FormikSignUpValuesType>) => (
           <FormAuth
             // this is mocked value in this branch
-            errorMessage={"error"}
+            errorMessage={handleError(error as IError)}
             formFields={registrationFormFields}
             buttonTitle={t("auth.signUp.buttonTitle")}
             isLoading={isLoading}
