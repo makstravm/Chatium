@@ -1,3 +1,3 @@
 export enum ErrorMessage {
-  DEFAULT = "An unexpected error occurred",
+  DEFAULT = "UNEXPECTED_ERROR",
 }
