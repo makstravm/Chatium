@@ -1,5 +1,3 @@
-import { NavigateFunction } from "react-router-dom";
-import { SchemaOf } from "yup";
 import {
   IFormField,
   ILoginInitialValue,
@@ -7,14 +5,23 @@ import {
   IRegisterValidationSchema,
   IRegistrationInitialValue,
 } from "types";
+import { FormikProps } from "formik";
 
-export interface FormikValuesType {
-  [key: string]: string | boolean;
+export type FormikValuesType =
+  | FormikProps<FormikSignInValuesType>
+  | FormikProps<FormikSignUpValuesType>;
+
+export interface FormikSignInValuesType {
+  email: string;
+  password: string;
+  isRememberUser: boolean;
 }
 
-export interface FormikSubmitType {
-  values: FormikValuesType;
-  navigate: NavigateFunction;
+export interface FormikSignUpValuesType {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 }
 
 export type InitialValuesFormType =
@@ -25,14 +32,11 @@ export type ValidationSchemaTypes =
   | IRegisterValidationSchema
   | ILoginValidationSchema;
 
-export interface IFormProps {
-  initialValues: FormikValuesType;
+export interface IFormAuthProps {
+  formik: FormikValuesType;
   formFields: IFormField[];
-  buttonTitle: string;
-  onSubmit: (values: FormikSubmitType) => void;
-  validationSchema: SchemaOf<ValidationSchemaTypes>;
   labelCheckBox?: string;
   isLoading: boolean;
-  errorMessage?: string | unknown;
-  isError: boolean;
+  buttonTitle: string;
+  errorMessage: string | null;
 }

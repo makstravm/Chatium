@@ -4,7 +4,7 @@ import { AuthContext } from "context/AuthContext";
 import { RoutesUrls } from "constants/routes";
 
 const ProtectedRoute: FC = () => {
-  const { auth, isLoading } = useContext(AuthContext);
+  const { isLoading } = useContext(AuthContext);
 
   const location = useLocation();
 
@@ -12,7 +12,10 @@ const ProtectedRoute: FC = () => {
     return <div>LOADING ................</div>;
   }
 
-  if (!auth) {
+  // this conditional is mocked in this branch
+  const isToken = !!(sessionStorage?.token || localStorage?.token);
+
+  if (!isToken) {
     return <Navigate to={RoutesUrls.SIGN_IN} state={location} replace />;
   }
 

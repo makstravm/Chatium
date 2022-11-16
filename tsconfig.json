@@ -24,6 +24,9 @@
       "constants/*": ["./src/constants/*"],
       "lib/*": ["./src/lib/*"],
       "types/*": ["./src/types/*"],
+      "api/*": ["./src/api/*"],
+      "services/*": ["./src/services/*"],
+      "businessLogic/*": ["./src/businessLogic/*"],
       "types": ["./src/types"]
     }
   },

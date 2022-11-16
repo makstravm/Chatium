@@ -1,7 +1,7 @@
 import { useContext, useMemo } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import SignIn from "components/Authentication/SignIn";
+import { SignIn } from "components/Authentication/SignIn";
 import SignUp from "components/Authentication/SignUp";
 import ProtectedRoute from "components/ProtectedRoute";
 import { ThemeContext } from "src/context/ThemeContext";
@@ -35,7 +35,7 @@ const App = () => {
             </Route>
             <Route path={HOME} element={<ProtectedRoute />}>
               <Route path={HOME} element={<Navigate to={"layout"} />} />
-              {/* this route name is mockthis route  */}
+              {/* this route name is mocked this route  */}
               <Route path={"layout"} element={<Layout />} />
             </Route>
           </Routes>

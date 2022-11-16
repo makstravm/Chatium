@@ -33,6 +33,7 @@
     "semi": ["error", "always"],
     "no-unused-vars": "off",
     "comma-dangle": "off",
+    "@typescript-eslint/promise-function-async": 0,
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
@@ -42,6 +43,7 @@
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/no-extraneous-class": 0,
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/restrict-template-expressions": 0,
     "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/member-delimiter-style": [
       "warn",

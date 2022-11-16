@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { getIn } from "formik";
 import {
   FormControl,
   FormHelperText,
@@ -29,7 +30,7 @@ const PasswordField: FC<IPasswordField> = ({
       size="small"
       variant="outlined"
       fullWidth
-      error={!!(touched[name] && errors[name])}
+      error={!!(getIn(touched, name) && getIn(errors, name))}
     >
       <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
       <OutlinedInput
@@ -48,9 +49,9 @@ const PasswordField: FC<IPasswordField> = ({
         }
         label={label}
       />
-      {!!(touched[name] && errors[name]) && (
+      {!!(getIn(touched, name) && getIn(errors, name)) && (
         <FormHelperText id="component-error-text">
-          {t(`auth.validError.${errors[name] as string}`)}
+          {t(`auth.validError.${getIn(errors, name)}`)}
         </FormHelperText>
       )}
     </FormControl>
