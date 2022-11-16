@@ -1,54 +1,10 @@
-import { NavigateFunction } from "react-router-dom";
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { FirebaseError } from "firebase/app";
-import { UserInfo } from "@firebase/auth-types";
-import {
-  browserSessionPersistence,
-  createUserWithEmailAndPassword,
-  getAuth,
-  setPersistence,
-  signOut,
-  updateProfile,
-} from "firebase/auth";
-import { RoutesUrls } from "constants/routes";
-import { FormikSignUpValuesType } from "types";
-
-const { SUCCESS_SIGN_IN } = RoutesUrls;
-
-interface MockType {
-  values: FormikSignUpValuesType;
-  navigate: NavigateFunction;
-}
+import { signOut } from "firebase/auth";
 
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fakeBaseQuery(),
   endpoints: (builder) => ({
-    signUp: builder.mutation<UserInfo | FirebaseError, MockType>({
-      // this any is mocked. this method will been remove later
-      async queryFn({ values: { name, email, password }, navigate }) {
-        const auth = getAuth();
-
-        try {
-          const response = await createUserWithEmailAndPassword(
-            auth,
-            email,
-            password
-          );
-
-          await updateProfile(response.user, {
-            displayName: name,
-          });
-
-          await setPersistence(auth, browserSessionPersistence);
-          navigate(SUCCESS_SIGN_IN, { replace: true });
-
-          return { data: response?.user };
-        } catch (err) {
-          return { error: err as FirebaseError };
-        }
-      },
-    }),
     logOut: builder.mutation({
       async queryFn(arg) {
         try {
@@ -63,4 +19,4 @@ export const userApi = createApi({
   }),
 });
 
-export const { useSignUpMutation, useLogOutMutation } = userApi;
+export const { useLogOutMutation } = userApi;
