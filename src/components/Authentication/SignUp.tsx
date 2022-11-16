@@ -1,30 +1,45 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Formik, FormikProps } from "formik";
 import { Box, Grid, Typography } from "@mui/material";
-import { FormAuth } from "src/components/Authentication/FormAuth";
+import { FormAuth } from "components/Authentication/FormAuth";
 import { registrationFormFields } from "constants/forms/registrationFormsFields";
 import { registrationInitialValue } from "constants/forms/registrationInitialValue";
 import { RoutesUrls } from "constants/routes";
-import { useSignUpMutation } from "store/slices/userSlice";
+import { signUp } from "businessLogic/signUp";
 import { registerValidationSchema } from "lib/schema/registrationValidationSchema";
-import { FormikSignUpValuesType, IError } from "types";
+import { FormikSignUpValuesType } from "types";
 
 const SignUp = () => {
-  const [signUp, { isLoading, error }] = useSignUpMutation();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const { t } = useTranslation();
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  // function is  mocked
   const navigate = useNavigate();
 
-  const handleError = (error: IError): string | null => {
-    if (error?.message) {
-      return error.message;
-    }
+  const handleOnSubmit = async ({
+    email,
+    password,
+    name,
+  }: FormikSignUpValuesType) => {
+    setIsLoading(true);
+    const { user, error } = await signUp({
+      email,
+      password,
+      name,
+    });
 
-    return null; // is mocked
+    if (user) {
+      navigate(RoutesUrls.HOME);
+    }
+    if (error?.message) {
+      setErrorMessage(error.message);
+    }
+    setIsLoading(false);
   };
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -39,12 +54,11 @@ const SignUp = () => {
       <Formik
         initialValues={registrationInitialValue}
         validationSchema={registerValidationSchema}
-        onSubmit={async (values) => await signUp({ values, navigate })} // this is mocked value in this branch
+        onSubmit={handleOnSubmit}
       >
         {(formik: FormikProps<FormikSignUpValuesType>) => (
           <FormAuth
-            // this is mocked value in this branch
-            errorMessage={handleError(error as IError)}
+            errorMessage={errorMessage}
             formFields={registrationFormFields}
             buttonTitle={t("auth.signUp.buttonTitle")}
             isLoading={isLoading}

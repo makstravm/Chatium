@@ -1,22 +1,35 @@
 import { AxiosError } from "axios";
 import { ErrorMessage } from "constants/errorMessage";
-import { signInApi } from "api";
+import { signUpApi, updateProfileApi, saveUserToRTBaseApi } from "api";
 import { handleError } from "helpers/handleError";
 import { setTokenInStorage } from "helpers/storeToken";
-import { IError, ISignIn, FormikSignInValuesType } from "types";
+import { FormikSignUpValuesType, IError, ISignUp } from "types";
 
-export const signIn = async ({
+export const signUp = async ({
+  name,
   email,
   password,
-  isRememberUser,
-}: FormikSignInValuesType): Promise<ISignIn> => {
+}: Omit<FormikSignUpValuesType, "confirmPassword">): Promise<ISignUp> => {
   try {
-    const { data } = await signInApi({
+    const { data } = await signUpApi({
       email,
       password,
     });
 
-    setTokenInStorage(data.refreshToken, isRememberUser);
+    await updateProfileApi({
+      idToken: data.idToken,
+      displayName: name,
+    });
+
+    await saveUserToRTBaseApi(
+      {
+        name,
+        email,
+      },
+      data.localId
+    );
+
+    setTokenInStorage(data.refreshToken);
 
     return { user: data, error: null };
   } catch (err) {
