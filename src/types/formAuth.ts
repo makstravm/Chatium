@@ -11,16 +11,17 @@ export type FormikValuesType =
   | FormikProps<FormikSignInValuesType>
   | FormikProps<FormikSignUpValuesType>;
 
-export interface FormikSignInValuesType {
+export interface IEmailAndPassword {
   email: string;
   password: string;
+}
+
+export interface FormikSignInValuesType extends IEmailAndPassword {
   isRememberUser: boolean;
 }
 
-export interface FormikSignUpValuesType {
+export interface FormikSignUpValuesType extends IEmailAndPassword {
   name: string;
-  email: string;
-  password: string;
   confirmPassword: string;
 }
 

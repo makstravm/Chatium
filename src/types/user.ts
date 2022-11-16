@@ -7,11 +7,6 @@ export interface IUpdatedToken {
 export type IdTokenType = string;
 export type IdUserType = string;
 
-export interface IUser {
-  displayName: string;
-  email: string;
-}
-
 export interface IUserProfile extends IUser {
   localId: IdUserType;
   photoUrl?: string;
@@ -20,4 +15,22 @@ export interface IUserProfile extends IUser {
 
 export interface IUsersArray {
   users: IUserProfile[];
+}
+export interface ICreatedAt {
+  ".sv": "timestamp";
+}
+
+export interface IUser {
+  name: string;
+  email: string;
+}
+
+export interface IUserResponse extends IUser {
+  photoUrl: string | null;
+  createdAt: number;
+}
+
+export interface IUserSaveRequest extends IUser {
+  createdAt: ICreatedAt;
+  photoUrl: null;
 }
