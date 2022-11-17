@@ -1,16 +1,23 @@
-import { Container, Grid, Paper } from "@mui/material";
+import { Container, Divider, Grid, Paper } from "@mui/material";
 import Footer from "components/Footer";
 import { LogoSmall } from "components/LogoSmall";
+import { AsideContainer } from "src/components/SideContainer/SideContainer";
 
 const Layout = () => (
   <Container maxWidth="xl">
     <Grid container wrap="nowrap" height="100vh" flexDirection="column">
       <LogoSmall />
-      <Grid container component={Paper} flexGrow="1">
-        <Grid item xs={3}>
-          Aside
+      <Grid
+        container
+        component={Paper}
+        flexGrow="1"
+        maxHeight={"calc(100vh - 78px)"}
+      >
+        <Grid item md={3} xs={4} justifyContent="space-between">
+          <AsideContainer />
         </Grid>
-        <Grid item xs={9}>
+        <Divider orientation="vertical" flexItem />
+        <Grid item xs>
           Chat
         </Grid>
       </Grid>

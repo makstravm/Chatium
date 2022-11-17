@@ -8,6 +8,8 @@ export * from "types/context";
 
 export * from "types/passwordField";
 
+export * from "types/customScroll";
+
 export * from "types/errorMessage";
 
 export * from "types/auth";
