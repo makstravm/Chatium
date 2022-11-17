@@ -4,7 +4,7 @@ import { ThemeContext } from "context/ThemeContext";
 import { CustomScroll } from "../CustomScroll";
 import { IChatList } from "src/constants/chatList";
 
-export const ChatsList: FC<{ chatList: IChatList }> = ({ chatList }) => {
+export const ChatList: FC<{ chatList: IChatList }> = ({ chatList }) => {
   const { themeMode } = useContext(ThemeContext);
 
   return (

@@ -1,7 +1,7 @@
 import { Container, Divider, Grid, Paper } from "@mui/material";
 import Footer from "components/Footer";
 import { LogoSmall } from "components/LogoSmall";
-import { AsideContainer } from "src/components/AsideContainer";
+import { AsideContainer } from "src/components/SideContainer/SideContainer";
 
 const Layout = () => (
   <Container maxWidth="xl">
