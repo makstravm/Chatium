@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { ChatsList } from "./ChatsList";
+import { chatList } from "constants/chatList";
 
 export const AsideContainer = () => (
   <Box p={1} pr={0} sx={{ overflow: "hidden" }}>
@@ -26,6 +27,6 @@ export const AsideContainer = () => (
       />
     </Box>
     <Divider />
-    <ChatsList />
+    <ChatsList chatList={chatList} />
   </Box>
 );
