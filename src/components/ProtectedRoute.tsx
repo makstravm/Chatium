@@ -3,6 +3,7 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { AuthContext } from "context/AuthContext";
 import { RoutesUrls } from "constants/routes";
 import { getAccountInfo } from "businessLogic/getAccountInfo";
+import { Preloader } from "components/Preloader";
 
 const ProtectedRoute: FC = () => {
   const { userData, setUserData } = useContext(AuthContext);
@@ -27,7 +28,7 @@ const ProtectedRoute: FC = () => {
   }, []);
 
   if (isLoading) {
-    return <div>LOADING ................</div>;
+    return <Preloader />;
   }
 
   if (!userData) {

@@ -17,4 +17,6 @@ export const colors = {
   autoFillBgcTextFieldLight: "#e0e0e0",
   errorLight: "#b71c1c",
   errorDark: "#e57373",
+  spinnerLight: "#f4f4f4",
+  spinnerDark: "#212121",
 };
