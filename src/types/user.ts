@@ -21,7 +21,7 @@ export interface ICreatedAt {
 }
 
 export interface IUser {
-  name: string;
+  displayName: string;
   email: string;
 }
 
