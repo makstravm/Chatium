@@ -10,7 +10,7 @@ build:
     - npm ci
   script:
     - echo "This job tests build"
-    - npm run dev
+    - npm run start
   only:
     - merge_request
 
