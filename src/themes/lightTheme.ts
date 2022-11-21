@@ -53,6 +53,15 @@ export const lightTheme: ThemeOptions = {
         },
       },
     },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          "&.Mui-checked": {
+            color: fontsLight,
+          },
+        },
+      },
+    },
     MuiPaper: {
       styleOverrides: {
         root: {

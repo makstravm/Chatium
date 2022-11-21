@@ -53,6 +53,15 @@ export const darkTheme: ThemeOptions = {
         },
       },
     },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          "&.Mui-checked": {
+            color: fontsDark,
+          },
+        },
+      },
+    },
     MuiPaper: {
       styleOverrides: {
         root: {
