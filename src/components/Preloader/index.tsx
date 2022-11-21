@@ -9,7 +9,7 @@ import { colors } from "src/themes/colors";
 
 const { DARK } = Theme;
 
-const { spinnerLight } = colors;
+const { spinnerLight, spinnerDark } = colors;
 
 export const Preloader: FC = () => {
   const { themeMode } = useContext(ThemeContext);
@@ -25,7 +25,9 @@ export const Preloader: FC = () => {
         />
         <Box
           className={style.spinner}
-          style={{ borderColor: themeMode !== DARK ? "#fff" : spinnerLight }}
+          style={{
+            borderColor: themeMode !== DARK ? spinnerDark : spinnerLight,
+          }}
         />
       </Box>
     </Grid>
