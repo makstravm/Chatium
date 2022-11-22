@@ -1,10 +1,10 @@
-export interface IResponseAfterUpdateToken {
+export interface IUpdatedToken {
   refresh_token: string;
   id_token: string;
   user_id: string;
 }
 
-export interface IRequestGetAccountInfo {
+export interface ITokenId {
   idToken: string;
 }
 
@@ -19,6 +19,6 @@ export interface IUserProfile extends IUser {
   createdAt: string;
 }
 
-export interface IResponseGetAccountInfo {
+export interface IUsersArray {
   users: IUserProfile[];
 }
