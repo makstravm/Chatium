@@ -16,7 +16,14 @@ export const Preloader: FC = () => {
 
   return (
     <Grid container alignItems="center" justifyContent="center" height="100vh">
-      <Box className={style.preloader}>
+      <Grid
+        className={style.preloader}
+        container
+        alignItems="center"
+        justifyContent="center"
+        width="20vh"
+        height="18vh"
+      >
         <Box
           component="img"
           className={style.img}
@@ -29,7 +36,7 @@ export const Preloader: FC = () => {
             borderColor: themeMode !== DARK ? spinnerDark : spinnerLight,
           }}
         />
-      </Box>
+      </Grid>
     </Grid>
   );
 };
