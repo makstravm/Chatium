@@ -12,16 +12,16 @@ const ProtectedRoute: FC = () => {
 
   const location = useLocation();
 
+  const getAccountData = async () => {
+    const user = await getAccountInfo();
+
+    setUserData(user);
+    setIsLoading(!isLoading);
+  };
+
   useEffect(() => {
     if (sessionStorage?.token || localStorage?.token) {
-      const handlerToGetAccountInfo = async () => {
-        const user = await getAccountInfo();
-
-        setUserData(user);
-        setIsLoading(!isLoading);
-      };
-
-      handlerToGetAccountInfo();
+      getAccountData();
     } else {
       setIsLoading(!isLoading);
     }
