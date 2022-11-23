@@ -23,7 +23,7 @@ export const signUp = async ({
 
     await saveUserToRTBaseApi(
       {
-        name,
+        displayName: name,
         email,
       },
       data.localId
