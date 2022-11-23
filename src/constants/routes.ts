@@ -1,6 +1,6 @@
 export enum RoutesUrls {
-  HOME = "/",
+  MAIN = "/",
   SIGN_IN = "/sign-in",
   SIGN_UP = "/sign-up",
-  LAYOUT = "/layout",
+  SUCCESS_SIGN_IN = "/success-sign-in",
 }

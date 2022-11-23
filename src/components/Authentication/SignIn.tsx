@@ -31,7 +31,7 @@ export const SignIn = () => {
     });
 
     if (user) {
-      navigate(RoutesUrls.HOME);
+      navigate(RoutesUrls.SUCCESS_SIGN_IN);
     }
     if (error?.message) {
       setErrorMessage(error.message);
