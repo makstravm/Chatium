@@ -23,7 +23,7 @@ const SignUp = () => {
       return error.message;
     }
 
-    return null;
+    return null; // TODO
   };
 
   return (
