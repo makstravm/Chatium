@@ -1,4 +1,4 @@
 export enum TimeOfTheDayForTheme {
-  MORNING = 18,
-  EVENING = 7,
+  EVENING = 18,
+  MORNING = 7,
 }
