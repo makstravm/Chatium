@@ -20,7 +20,7 @@ const ProtectedRoute: FC = () => {
   };
 
   useEffect(() => {
-    if (sessionStorage?.token || localStorage?.token) {
+    if ((!userData && sessionStorage?.token) || localStorage?.token) {
       getAccountData();
     } else {
       setIsLoading(!isLoading);
@@ -29,13 +29,11 @@ const ProtectedRoute: FC = () => {
 
   if (isLoading) {
     return <Preloader />;
-  }
-
-  if (!userData) {
+  } else if (!userData) {
     return <Navigate to={RoutesUrls.SIGN_IN} state={location} replace />;
+  } else {
+    return <Outlet />;
   }
-
-  return <Outlet />;
 };
 
 export default ProtectedRoute;
