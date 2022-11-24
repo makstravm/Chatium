@@ -1,5 +1,5 @@
 import { POST } from "services/HTTPService";
-import { IUsersArray, ITokenId, IUpdatedToken } from "types";
+import { IUsersArray, IUpdatedToken, IdTokenType } from "types";
 
 export const updateTokenApi = (value: string) =>
   POST<IUpdatedToken, string>(
@@ -8,8 +8,8 @@ export const updateTokenApi = (value: string) =>
     { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
   );
 
-export const getAccountInfoApi = (value: ITokenId) =>
-  POST<IUsersArray, ITokenId>(
+export const getAccountInfoApi = ({ idToken }: { idToken: IdTokenType }) =>
+  POST<IUsersArray, { idToken: IdTokenType }>(
     `${process.env.FIREBASE_AUTH_API_PATH}lookup?key=${process.env.REACT_APP_FIREBASE_API_KEY}`,
-    value
+    { idToken }
   );

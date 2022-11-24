@@ -1,12 +1,10 @@
 export interface IUpdatedToken {
   refresh_token: string;
-  id_token: string;
+  id_token: IdTokenType;
   user_id: string;
 }
 
-export interface ITokenId {
-  idToken: string;
-}
+export type IdTokenType = string;
 
 export interface IUser {
   displayName: string;
