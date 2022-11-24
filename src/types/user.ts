@@ -1,10 +1,11 @@
 export interface IUpdatedToken {
   refresh_token: string;
   id_token: IdTokenType;
-  user_id: string;
+  user_id: IdUserType;
 }
 
 export type IdTokenType = string;
+export type IdUserType = string;
 
 export interface IUser {
   displayName: string;
@@ -12,7 +13,7 @@ export interface IUser {
 }
 
 export interface IUserProfile extends IUser {
-  localId: string;
+  localId: IdUserType;
   photoUrl?: string;
   createdAt: string;
 }
