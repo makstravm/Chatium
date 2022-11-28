@@ -12,6 +12,6 @@ export const getAccountInfo = async () => {
 
     return data.users[0];
   } catch (e) {
-    return null; // TODO
+    return null; // TODO  implement notifications for users about errors
   }
 };

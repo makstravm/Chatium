@@ -23,7 +23,7 @@ const SignUp = () => {
       return error.message;
     }
 
-    return null; // TODO
+    return null; // is mocked
   };
 
   return (
