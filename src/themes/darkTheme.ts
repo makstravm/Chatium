@@ -42,6 +42,26 @@ export const darkTheme: ThemeOptions = {
         },
       },
     },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          input: {
+            "&:-webkit-autofill": {
+              WebkitBoxShadow: `0 0 0 1000px ${autoFillBgcTextFieldDark} inset`,
+            },
+          },
+        },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          "&.Mui-checked": {
+            color: fontsDark,
+          },
+        },
+      },
+    },
     MuiPaper: {
       styleOverrides: {
         root: {

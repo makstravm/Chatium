@@ -1,5 +1,6 @@
+import { Dispatch, SetStateAction } from "react";
 import { Theme } from "constants/themeMode";
-import { UserInfo } from "firebase/auth";
+import { IUserProfile } from "./user";
 
 const { DARK, LIGHT } = Theme;
 
@@ -9,6 +10,6 @@ export interface IThemeContext {
 }
 
 export interface IAuthContext {
-  auth: UserInfo | null;
-  isLoading: boolean;
+  userData: IUserProfile | null;
+  setUserData: Dispatch<SetStateAction<IUserProfile | null>>;
 }

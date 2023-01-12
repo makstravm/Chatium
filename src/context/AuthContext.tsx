@@ -1,29 +1,18 @@
-import { createContext, FC, ReactNode, useEffect, useState } from "react";
-import { onAuthStateChanged, UserInfo } from "firebase/auth";
-import { auth } from "src/firebase";
-import { IAuthContext } from "types";
+import { createContext, FC, ReactNode, useState } from "react";
+import { IAuthContext, IUserProfile } from "types";
 
 export const AuthContext = createContext<IAuthContext>({
-  auth: null,
-  isLoading: true,
+  userData: null,
+  setUserData: () => {},
 });
 
 export const AuthProviderWrapper: FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [userData, setUserData] = useState<UserInfo | null>(null);
-
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      setUserData(user);
-      setIsLoading(false);
-    });
-  }, []);
+  const [userData, setUserData] = useState<IUserProfile | null>(null);
 
   return (
-    <AuthContext.Provider value={{ auth: userData, isLoading }}>
+    <AuthContext.Provider value={{ userData, setUserData }}>
       {children}
     </AuthContext.Provider>
   );

@@ -13,7 +13,7 @@ import Authorization from "pages/Authorization";
 import { lightTheme } from "themes/lightTheme";
 import { darkTheme } from "themes/darkTheme";
 
-const { HOME, SIGN_IN, SIGN_UP } = RoutesUrls;
+const { MAIN, SIGN_IN, SIGN_UP, SUCCESS_SIGN_IN } = RoutesUrls;
 
 const App = () => {
   const { themeMode } = useContext(ThemeContext);
@@ -33,10 +33,10 @@ const App = () => {
               <Route path={SIGN_IN} element={<SignIn />} />
               <Route path={SIGN_UP} element={<SignUp />} />
             </Route>
-            <Route path={HOME} element={<ProtectedRoute />}>
-              <Route path={HOME} element={<Navigate to={"layout"} />} />
-              {/* this route name is mocked this route  */}
-              <Route path={"layout"} element={<Layout />} />
+            <Route path={MAIN} element={<ProtectedRoute />}>
+              <Route path={SUCCESS_SIGN_IN} element={<Navigate to={MAIN} />} />
+              <Route path={MAIN} element={<Layout />} />
+              <Route path="*" element={<Navigate to={MAIN} />} />
             </Route>
           </Routes>
         </BrowserRouter>

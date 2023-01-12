@@ -13,7 +13,7 @@ import {
 import { RoutesUrls } from "constants/routes";
 import { FormikSignUpValuesType } from "types";
 
-const { HOME } = RoutesUrls;
+const { SUCCESS_SIGN_IN } = RoutesUrls;
 
 interface MockType {
   values: FormikSignUpValuesType;
@@ -41,7 +41,7 @@ export const userApi = createApi({
           });
 
           await setPersistence(auth, browserSessionPersistence);
-          navigate(HOME, { replace: true });
+          navigate(SUCCESS_SIGN_IN, { replace: true });
 
           return { data: response?.user };
         } catch (err) {

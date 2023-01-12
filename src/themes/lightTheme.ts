@@ -42,6 +42,26 @@ export const lightTheme: ThemeOptions = {
         },
       },
     },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          input: {
+            "&:-webkit-autofill": {
+              WebkitBoxShadow: `0 0 0 1000px ${autoFillBgcTextFieldLight} inset`,
+            },
+          },
+        },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          "&.Mui-checked": {
+            color: fontsLight,
+          },
+        },
+      },
+    },
     MuiPaper: {
       styleOverrides: {
         root: {

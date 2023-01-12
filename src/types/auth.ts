@@ -1,4 +1,4 @@
-import { IError } from "./error";
+import { IdUserType, IError } from "types";
 
 export interface ISignIn {
   user: IResponseSignIn | null;
@@ -15,7 +15,7 @@ export interface IRequestAuthValues extends IEmailAndPassword {
 }
 
 export interface IResponseSignIn {
-  localId: string;
+  localId: IdUserType;
   email: string;
   displayName: string;
   idToken: string;
