@@ -13,7 +13,7 @@ export const getAccountInfoApi = ({ idToken }: { idToken: IdTokenType }) =>
   POST<IUsersArray, { idToken: IdTokenType }>(
     `${process.env.FIREBASE_AUTH_API_PATH}lookup?key=${process.env.REACT_APP_FIREBASE_API_KEY}`,
     { idToken }
-  )Z;
+  );
 
 export const saveUserToRTBaseApi = (value: IUser, userId: string) =>
   PUT<IUserResponse, IUserSaveRequest>(

@@ -31,7 +31,7 @@ const SignUp = () => {
     });
 
     if (user) {
-      navigate(RoutesUrls.HOME);
+      navigate(RoutesUrls.MAIN);
     }
     if (error?.message) {
       setErrorMessage(error.message);
