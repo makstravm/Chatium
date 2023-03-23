@@ -1,6 +1,6 @@
-import { signInApi } from "api/signIn";
 import { AxiosError } from "axios";
 import { ErrorMessage } from "constants/errorMessage";
+import { signInApi } from "api";
 import { handleError } from "helpers/handleError";
 import { setTokenInStorage } from "helpers/storeToken";
 import { IError, ISignIn, FormikSignInValuesType } from "types";
@@ -16,7 +16,7 @@ export const signIn = async ({
       password,
     });
 
-    setTokenInStorage(isRememberUser, data.refreshToken);
+    setTokenInStorage(data.refreshToken, isRememberUser);
 
     return { user: data, error: null };
   } catch (err) {
